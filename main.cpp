@@ -4,7 +4,6 @@
 #include"headers\Jugador.h"
 #include"headers\Estadisticas.h"
 #include"headers\Raza.h"
-#include"headers\Clase.h"
 
 void mostrarMenu(){
     std::cout << "1. Crear personaje" << std::endl;

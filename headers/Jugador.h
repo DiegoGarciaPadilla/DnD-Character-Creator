@@ -17,7 +17,6 @@ class Jugador {
     public:
         // Constructores
         Jugador();
-        Jugador(std::string nombre, std::string genero, int edad, std::string alineamiento);
         Jugador(std::string nombre, std::string genero, int edad, std::string alineamiento, Raza raza, Estadisticas estadisticas);
 
         // Getters
@@ -47,16 +46,7 @@ Jugador::Jugador() {
     this->edad = 18;
     this->alineamiento = "Neutral";
     this->raza = Raza();
-    this->estadisticas = Estadisticas();
-}
-
-Jugador::Jugador(std::string nombre, std::string genero, int edad, std::string alineamiento) {
-    this->nombre = nombre;
-    this->genero = genero;
-    this->edad = edad;
-    this->alineamiento = alineamiento;
-    this->raza = Raza();
-    this->estadisticas = Estadisticas();
+    this->estadisticas = Estadisticas(this->raza);
 }
 
 Jugador::Jugador(std::string nombre, std::string genero, int edad, std::string alineamiento, Raza raza, Estadisticas estadisticas) {
