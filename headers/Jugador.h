@@ -1,5 +1,8 @@
 // En este archivo se define la clase Jugador, que representa a un jugador de la partida.
 
+#ifndef JUGADOR_H
+#define JUGADOR_H
+
 #include<iostream>
 #include<string>
 #include<cstdlib>
@@ -118,3 +121,5 @@ void Jugador::mostrarDatos() {
 void Jugador::mostrarEstadisticas() {
     this->estadisticas.mostrarEstadisticas();
 }
+
+#endif
