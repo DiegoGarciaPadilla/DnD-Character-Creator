@@ -22,7 +22,9 @@ class Raza {
     public:
         // Constructores
         Raza();
-        Raza(std::string nombre, std::string descripcion, int modificadorFuerza, int modificadorDestreza, int modificadorConstitucion, int modificadorInteligencia, int modificadorSabiduria, int modificadorCarisma);
+        Raza(std::string nombre, std::string descripcion, int modificadorFuerza, 
+            int modificadorDestreza, int modificadorConstitucion, int modificadorInteligencia, 
+            int modificadorSabiduria, int modificadorCarisma);
 
         // Getters
         std::string getNombre();
@@ -53,7 +55,7 @@ class Raza {
 
 Raza::Raza(){
     this->nombre = "Humano";
-    this->descripcion = "Los humanos son la raza más común de todo el mundo de D&D. Los humanos son versátiles y pueden adaptarse a cualquier situación. Los humanos son la raza más común de todo el mundo de D&D. Los humanos son versátiles y pueden adaptarse a cualquier situación.";
+    this->descripcion = "En los registros de la mayoría de los mundos, los humanos son la más joven de las  comunes. Han llegado comparativamente tarde al mundo y sus vidas son más cortas que las de enanos, elfos y dragones. Y quizá sea precisamente por estas breves existencias por lo que los humanos aspiran a conseguir tanto como sean capaces en los años que se les han concedido.";
     this->modificadorFuerza = 1;
     this->modificadorDestreza = 1;
     this->modificadorConstitucion = 1;
