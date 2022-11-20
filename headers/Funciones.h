@@ -40,7 +40,8 @@ void menuPrincipal()
     std::cout << std::endl;
     std::cout << "1. Crear personaje" << std::endl;
     std::cout << "2. Jugar partida" << std::endl;
-    std::cout << "3. Salir" << std::endl;
+    std::cout << "3. Mostrar personaje" << std::endl;
+    std::cout << "4. Salir" << std::endl;
 }
 
 // Funcion para mostrar las opciones de alineamiento
