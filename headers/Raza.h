@@ -164,6 +164,18 @@ void Raza::setModificadorCarisma(int modificadorCarisma)
     this->modificadorCarisma = modificadorCarisma;
 }
 
+/* Funciones adicionales */
+
+// Funcion para mostrar las razas
+
+void mostrarRazas(Raza *razas)
+{
+    for (int i = 0; i < 9; i++)
+    {
+        std::cout << i + 1 << ". " << razas[i].getNombre() << std::endl;
+    }
+}
+
 // Funcion para inicializar las razas
 
 Raza *inicializarRazas()
