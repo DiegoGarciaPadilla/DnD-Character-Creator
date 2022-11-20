@@ -3,45 +3,48 @@
 #ifndef ESTADISTICAS_H
 #define ESTADISTICAS_H
 
-#include<iostream>
-#include<string>
-#include<cstdlib>
-#include"Raza.h"
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include "Raza.h"
 
-class Estadisticas {
-    private:
-        int fuerza;
-        int destreza;
-        int constitucion;
-        int inteligencia;
-        int sabiduria;
-        int carisma;
-    public:
-        // Constructores
-        Estadisticas();
-        Estadisticas(Raza raza);
+class Estadisticas
+{
+private:
+    int fuerza;
+    int destreza;
+    int constitucion;
+    int inteligencia;
+    int sabiduria;
+    int carisma;
 
-        // Getters
-        int getFuerza();
-        int getDestreza();
-        int getConstitucion();
-        int getInteligencia();
-        int getSabiduria();
-        int getCarisma();
+public:
+    // Constructores
+    Estadisticas();
+    Estadisticas(Raza raza);
 
-        // Setters
-        void setFuerza(int fuerza);
-        void setDestreza(int destreza);
-        void setConstitucion(int constitucion);
-        void setInteligencia(int inteligencia);
-        void setSabiduria(int sabiduria);
-        void setCarisma(int carisma);
+    // Getters
+    int getFuerza();
+    int getDestreza();
+    int getConstitucion();
+    int getInteligencia();
+    int getSabiduria();
+    int getCarisma();
 
-        // Metodos
-        void mostrarEstadisticas();
+    // Setters
+    void setFuerza(int fuerza);
+    void setDestreza(int destreza);
+    void setConstitucion(int constitucion);
+    void setInteligencia(int inteligencia);
+    void setSabiduria(int sabiduria);
+    void setCarisma(int carisma);
+
+    // Metodos
+    void mostrarEstadisticas();
 };
 
-Estadisticas::Estadisticas() {
+Estadisticas::Estadisticas()
+{
     this->fuerza = rand() % 20 + 1;
     this->destreza = rand() % 20 + 1;
     this->constitucion = rand() % 20 + 1;
@@ -50,7 +53,8 @@ Estadisticas::Estadisticas() {
     this->carisma = rand() % 20 + 1;
 }
 
-Estadisticas::Estadisticas(Raza raza) {
+Estadisticas::Estadisticas(Raza raza)
+{
     this->fuerza = raza.getModificadorFuerza() + (rand() % 20 + 1);
     this->destreza = raza.getModificadorDestreza() + (rand() % 20 + 1);
     this->constitucion = raza.getModificadorConstitucion() + (rand() % 20 + 1);
@@ -59,55 +63,68 @@ Estadisticas::Estadisticas(Raza raza) {
     this->carisma = raza.getModificadorCarisma() + (rand() % 20 + 1);
 }
 
-int Estadisticas::getFuerza() {
+int Estadisticas::getFuerza()
+{
     return this->fuerza;
 }
 
-int Estadisticas::getDestreza() {
+int Estadisticas::getDestreza()
+{
     return this->destreza;
 }
 
-int Estadisticas::getConstitucion() {
+int Estadisticas::getConstitucion()
+{
     return this->constitucion;
 }
 
-int Estadisticas::getInteligencia() {
+int Estadisticas::getInteligencia()
+{
     return this->inteligencia;
 }
 
-int Estadisticas::getSabiduria() {
+int Estadisticas::getSabiduria()
+{
     return this->sabiduria;
 }
 
-int Estadisticas::getCarisma() {
+int Estadisticas::getCarisma()
+{
     return this->carisma;
 }
 
-void Estadisticas::setFuerza(int fuerza) {
+void Estadisticas::setFuerza(int fuerza)
+{
     this->fuerza = fuerza;
 }
 
-void Estadisticas::setDestreza(int destreza) {
+void Estadisticas::setDestreza(int destreza)
+{
     this->destreza = destreza;
 }
 
-void Estadisticas::setConstitucion(int constitucion) {
+void Estadisticas::setConstitucion(int constitucion)
+{
     this->constitucion = constitucion;
 }
 
-void Estadisticas::setInteligencia(int inteligencia) {
+void Estadisticas::setInteligencia(int inteligencia)
+{
     this->inteligencia = inteligencia;
 }
 
-void Estadisticas::setSabiduria(int sabiduria) {
+void Estadisticas::setSabiduria(int sabiduria)
+{
     this->sabiduria = sabiduria;
 }
 
-void Estadisticas::setCarisma(int carisma) {
+void Estadisticas::setCarisma(int carisma)
+{
     this->carisma = carisma;
 }
 
-void Estadisticas::mostrarEstadisticas() {
+void Estadisticas::mostrarEstadisticas()
+{
     std::cout << "Fuerza: " << this->fuerza << std::endl;
     std::cout << "Destreza: " << this->destreza << std::endl;
     std::cout << "Constitucion: " << this->constitucion << std::endl;

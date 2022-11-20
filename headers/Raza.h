@@ -3,70 +3,73 @@
 #ifndef RAZA_H
 #define RAZA_H
 
-#include<iostream>
-#include<fstream>
-#include<string>
-#include<sstream>
-#include<vector>
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <sstream>
+#include <vector>
 
-class Raza {
-    private:
-        std::string nombre;
-        std::string descripcion;
-        int modificadorFuerza;
-        int modificadorDestreza;
-        int modificadorConstitucion;
-        int modificadorInteligencia;
-        int modificadorSabiduria;
-        int modificadorCarisma;
-    public:
-        // Constructores
-        Raza();
-        Raza(std::string nombre, std::string descripcion, int modificadorFuerza, 
-            int modificadorDestreza, int modificadorConstitucion, int modificadorInteligencia, 
-            int modificadorSabiduria, int modificadorCarisma);
+class Raza
+{
+private:
+    std::string nombre;
+    std::string descripcion;
+    int modificadorFuerza;
+    int modificadorDestreza;
+    int modificadorConstitucion;
+    int modificadorInteligencia;
+    int modificadorSabiduria;
+    int modificadorCarisma;
 
-        // Getters
-        std::string getNombre();
-        std::string getDescripcion();
-        int getModificadorFuerza();
-        int getModificadorDestreza();
-        int getModificadorConstitucion();
-        int getModificadorInteligencia();
-        int getModificadorSabiduria();
-        int getModificadorCarisma();
+public:
+    // Constructores
+    Raza();
+    Raza(std::string nombre, std::string descripcion, int modificadorFuerza,
+         int modificadorDestreza, int modificadorConstitucion, int modificadorInteligencia,
+         int modificadorSabiduria, int modificadorCarisma);
 
-        // Setters
-        void setNombre(std::string nombre);
-        void setDescripcion(std::string descripcion);
-        void setModificadorFuerza(int modificadorFuerza);
-        void setModificadorDestreza(int modificadorDestreza);
-        void setModificadorConstitucion(int modificadorConstitucion);
-        void setModificadorInteligencia(int modificadorInteligencia);
-        void setModificadorSabiduria(int modificadorSabiduria);
-        void setModificadorCarisma(int modificadorCarisma);
+    // Getters
+    std::string getNombre();
+    std::string getDescripcion();
+    int getModificadorFuerza();
+    int getModificadorDestreza();
+    int getModificadorConstitucion();
+    int getModificadorInteligencia();
+    int getModificadorSabiduria();
+    int getModificadorCarisma();
 
-        // Metodos
-        void mostrarRaza();
+    // Setters
+    void setNombre(std::string nombre);
+    void setDescripcion(std::string descripcion);
+    void setModificadorFuerza(int modificadorFuerza);
+    void setModificadorDestreza(int modificadorDestreza);
+    void setModificadorConstitucion(int modificadorConstitucion);
+    void setModificadorInteligencia(int modificadorInteligencia);
+    void setModificadorSabiduria(int modificadorSabiduria);
+    void setModificadorCarisma(int modificadorCarisma);
 
+    // Metodos
+    void mostrarRaza();
 };
 
 // Constructor por defecto
 
-Raza::Raza(){
-    this->nombre = "Humano";
-    this->descripcion = "En los registros de la mayoría de los mundos, los humanos son la más joven de las  comunes. Han llegado comparativamente tarde al mundo y sus vidas son más cortas que las de enanos, elfos y dragones. Y quizá sea precisamente por estas breves existencias por lo que los humanos aspiran a conseguir tanto como sean capaces en los años que se les han concedido.";
-    this->modificadorFuerza = 1;
-    this->modificadorDestreza = 1;
-    this->modificadorConstitucion = 1;
-    this->modificadorInteligencia = 1;
-    this->modificadorSabiduria = 1;
-    this->modificadorCarisma = 1;
+Raza::Raza()
+{
+    nombre = " ";
+    descripcion = " ";
+    modificadorFuerza = 0;
+    modificadorDestreza = 0;
+    modificadorConstitucion = 0;
+    modificadorInteligencia = 0;
+    modificadorSabiduria = 0;
+    modificadorCarisma = 0;
 }
 
 // Constructor con parametros
 
-Raza::Raza(std::string nombre, std::string descripcion, int modificadorFuerza, int modificadorDestreza, int modificadorConstitucion, int modificadorInteligencia, int modificadorSabiduria, int modificadorCarisma) {
+Raza::Raza(std::string nombre, std::string descripcion, int modificadorFuerza, int modificadorDestreza, int modificadorConstitucion, int modificadorInteligencia, int modificadorSabiduria, int modificadorCarisma)
+{
     this->nombre = nombre;
     this->descripcion = descripcion;
     this->modificadorFuerza = modificadorFuerza;
@@ -79,93 +82,97 @@ Raza::Raza(std::string nombre, std::string descripcion, int modificadorFuerza, i
 
 // Getters
 
-std::string Raza::getNombre() {
+std::string Raza::getNombre()
+{
     return this->nombre;
 }
 
-std::string Raza::getDescripcion() {
+std::string Raza::getDescripcion()
+{
     return this->descripcion;
 }
 
-int Raza::getModificadorFuerza() {
+int Raza::getModificadorFuerza()
+{
     return this->modificadorFuerza;
 }
 
-int Raza::getModificadorDestreza() {
+int Raza::getModificadorDestreza()
+{
     return this->modificadorDestreza;
 }
 
-int Raza::getModificadorConstitucion() {
+int Raza::getModificadorConstitucion()
+{
     return this->modificadorConstitucion;
 }
 
-int Raza::getModificadorInteligencia() {
+int Raza::getModificadorInteligencia()
+{
     return this->modificadorInteligencia;
 }
 
-int Raza::getModificadorSabiduria() {
+int Raza::getModificadorSabiduria()
+{
     return this->modificadorSabiduria;
 }
 
-int Raza::getModificadorCarisma() {
+int Raza::getModificadorCarisma()
+{
     return this->modificadorCarisma;
 }
 
 // Setters
 
-void Raza::setNombre(std::string nombre) {
+void Raza::setNombre(std::string nombre)
+{
     this->nombre = nombre;
 }
 
-void Raza::setDescripcion(std::string descripcion) {
+void Raza::setDescripcion(std::string descripcion)
+{
     this->descripcion = descripcion;
 }
 
-void Raza::setModificadorFuerza(int modificadorFuerza) {
+void Raza::setModificadorFuerza(int modificadorFuerza)
+{
     this->modificadorFuerza = modificadorFuerza;
 }
 
-void Raza::setModificadorDestreza(int modificadorDestreza) {
+void Raza::setModificadorDestreza(int modificadorDestreza)
+{
     this->modificadorDestreza = modificadorDestreza;
 }
 
-void Raza::setModificadorConstitucion(int modificadorConstitucion) {
+void Raza::setModificadorConstitucion(int modificadorConstitucion)
+{
     this->modificadorConstitucion = modificadorConstitucion;
 }
 
-void Raza::setModificadorInteligencia(int modificadorInteligencia) {
+void Raza::setModificadorInteligencia(int modificadorInteligencia)
+{
     this->modificadorInteligencia = modificadorInteligencia;
 }
 
-void Raza::setModificadorSabiduria(int modificadorSabiduria) {
+void Raza::setModificadorSabiduria(int modificadorSabiduria)
+{
     this->modificadorSabiduria = modificadorSabiduria;
 }
 
-void Raza::setModificadorCarisma(int modificadorCarisma) {
+void Raza::setModificadorCarisma(int modificadorCarisma)
+{
     this->modificadorCarisma = modificadorCarisma;
 }
 
-// Metodos
+// Funcion para inicializar las razas
 
-void Raza::mostrarRaza() {
-    std::cout << "Nombre: " << this->nombre << std::endl;
-    std::cout << "Descripcion: " << this->descripcion << std::endl;
-    std::cout << "Modificador de Fuerza: " << this->modificadorFuerza << std::endl;
-    std::cout << "Modificador de Destreza: " << this->modificadorDestreza << std::endl;
-    std::cout << "Modificador de Constitucion: " << this->modificadorConstitucion << std::endl;
-    std::cout << "Modificador de Inteligencia: " << this->modificadorInteligencia << std::endl;
-    std::cout << "Modificador de Sabiduria: " << this->modificadorSabiduria << std::endl;
-    std::cout << "Modificador de Carisma: " << this->modificadorCarisma << std::endl;
-}
-
-// Crea un array de razas a partir de un archivo de texto
-
-
-Raza* inicializarRazas(){
+Raza *inicializarRazas()
+{
     // Abrir el archivo
     std::ifstream archivo("./data/razas.txt");
     // Comprobar que el archivo se ha abierto correctamente
-    if (!archivo.is_open()){
+    if (!archivo.is_open())
+    {
         std::cout << "Error al abrir el archivo" << std::endl;
         return nullptr;
     }
@@ -180,11 +187,13 @@ Raza* inicializarRazas(){
 
     // Leer el resto de lineas
     int i = 0;
-    while (std::getline(archivo, linea)) {
+    while (std::getline(archivo, linea))
+    {
         std::stringstream ss(linea);
         std::string token;
         std::vector<std::string> tokens;
-        while (std::getline(ss, token, '|')) {
+        while (std::getline(ss, token, '|'))
+        {
             tokens.push_back(token);
         }
         // Crear la raza
@@ -199,7 +208,6 @@ Raza* inicializarRazas(){
 
     // Devolver el array de razas
     return razas;
-
 }
 
 #endif
