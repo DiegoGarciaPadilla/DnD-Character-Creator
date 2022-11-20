@@ -21,6 +21,11 @@ void limpiarPantalla()
     system("cls");
 }
 
+void pausa()
+{
+    system("pause");
+}
+
 int tirarDado()
 {
     return rand() % 20 + 1;
