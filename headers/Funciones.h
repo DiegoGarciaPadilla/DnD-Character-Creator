@@ -114,7 +114,7 @@ Personaje crearPersonaje()
     std::cout << std::endl;
     personaje.setEdad(edad);
 
-    std::cout << "Alineamiento: ";
+    std::cout << "Alineamiento: " << std::endl;
     mostrarAlineamientos();
     std::cin >> opcion;
     do
@@ -158,7 +158,7 @@ Personaje crearPersonaje()
     std::cout << std::endl;
     personaje.setAlineamiento(alineamiento);
 
-    std::cout << "Raza: ";
+    std::cout << "Raza: " << std::endl;
     mostrarRazas(razas);
     std::cin >> opcion;
     std::cout << std::endl;
