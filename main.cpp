@@ -1,7 +1,7 @@
 #include<iostream>
 #include<string>
 #include<cstdlib>
-#include"headers\Jugador.h"
+#include"headers\Personaje.h"
 #include"headers\Estadisticas.h"
 #include"headers\Raza.h"
 
@@ -17,7 +17,7 @@ int main() {
 
     std::string nombre, genero, alineamiento;
     int edad, op;
-    Jugador jugador;
+    Personaje personaje;
     Raza raza = Raza();
     Estadisticas stats = Estadisticas();
 
@@ -26,7 +26,7 @@ int main() {
 
     std::cout << "¿Cuál es tu nombre?" << std::endl;
     std::cin >> nombre;
-    jugador.setNombre(nombre);
+    personaje.setNombre(nombre);
 
 
     std::cout << "¿Cuál es tu género?" << std::endl;
@@ -51,7 +51,7 @@ int main() {
             break;
         }
     } while (op != 1 && op != 2 && op != 3);
-    jugador.setGenero(genero);
+    personaje.setGenero(genero);
 
     std::cout << "¿Cuál es tu edad?" << std::endl;
     std::cin >> edad;
@@ -59,7 +59,7 @@ int main() {
         std::cout << "Vaya, parece que has introducido una edad no válida. Inténtalo de nuevo." << std::endl;
         std::cin >> edad;
     }
-    jugador.setEdad(edad);
+    personaje.setEdad(edad);
 
     std::cout << "¿Cuál es tu alineamiento?" << std::endl;
     std::cout << "1. Caótico bueno" << std::endl;
@@ -107,6 +107,7 @@ int main() {
             break;
         }
     } while (op < 1 || op > 9);
+    personaje.setAlineamiento(alineamiento);
 
     std::cout << "¿Cuál es tu raza?" << std::endl;
     std::cout << "1. Draconido" << std::endl;
@@ -124,7 +125,7 @@ int main() {
         std::cin >> op;
     }
     raza = razas[op - 1];
-    jugador.setRaza(raza);
+    personaje.setRaza(raza);
 
     std::cout << "¿Deseas generar tus estadísticas?" << std::endl;
     std::cout << "1. Generar automáticamente" << std::endl;
@@ -133,7 +134,7 @@ int main() {
     do {
         switch (op) {
         case 1:
-            stats = Estadisticas(jugador.getRaza());
+            stats = Estadisticas(personaje.getRaza());
             break;
         default:
             std::cout << "Opción no válida. Inténtelo de nuevo." << std::endl;
@@ -142,6 +143,6 @@ int main() {
         }
     } while (op != 1 && op != 2);
 
-    jugador.mostrarDatos();
+    personaje.mostrarDatos();
 
 }
