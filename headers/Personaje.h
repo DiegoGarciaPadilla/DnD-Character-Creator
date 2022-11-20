@@ -1,7 +1,7 @@
-// En este archivo se define la clase Jugador, que representa a un jugador de la partida.
+// En este archivo se define la clase Personaje, que representa a un jugador de la partida.
 
-#ifndef JUGADOR_H
-#define JUGADOR_H
+#ifndef PERSONAJE_H
+#define PERSONAJE_H
 
 #include<iostream>
 #include<string>
@@ -9,7 +9,7 @@
 #include"Raza.h"
 #include"Estadisticas.h"
 
-class Jugador {
+class Personaje {
     private:
         std::string nombre;
         std::string genero;
@@ -19,8 +19,8 @@ class Jugador {
         Estadisticas estadisticas;
     public:
         // Constructores
-        Jugador();
-        Jugador(std::string nombre, std::string genero, int edad, std::string alineamiento, Raza raza, Estadisticas estadisticas);
+        Personaje();
+        Personaje(std::string nombre, std::string genero, int edad, std::string alineamiento, Raza raza, Estadisticas estadisticas);
 
         // Getters
         std::string getNombre();
@@ -43,8 +43,8 @@ class Jugador {
         void mostrarEstadisticas();
 };
 
-Jugador::Jugador() {
-    this->nombre = "Jugador";
+Personaje::Personaje() {
+    this->nombre = "Personaje";
     this->genero = "Masculino";
     this->edad = 18;
     this->alineamiento = "Neutral";
@@ -52,7 +52,7 @@ Jugador::Jugador() {
     this->estadisticas = Estadisticas(this->raza);
 }
 
-Jugador::Jugador(std::string nombre, std::string genero, int edad, std::string alineamiento, Raza raza, Estadisticas estadisticas) {
+Personaje::Personaje(std::string nombre, std::string genero, int edad, std::string alineamiento, Raza raza, Estadisticas estadisticas) {
     this->nombre = nombre;
     this->genero = genero;
     this->edad = edad;
@@ -61,55 +61,55 @@ Jugador::Jugador(std::string nombre, std::string genero, int edad, std::string a
     this->estadisticas = estadisticas;
 }
 
-std::string Jugador::getNombre() {
+std::string Personaje::getNombre() {
     return this->nombre;
 }
 
-std::string Jugador::getGenero() {
+std::string Personaje::getGenero() {
     return this->genero;
 }
 
-int Jugador::getEdad() {
+int Personaje::getEdad() {
     return this->edad;
 }
 
-std::string Jugador::getAlineamiento() {
+std::string Personaje::getAlineamiento() {
     return this->alineamiento;
 }
 
-Raza Jugador::getRaza() {
+Raza Personaje::getRaza() {
     return this->raza;
 }
 
-Estadisticas Jugador::getEstadisticas() {
+Estadisticas Personaje::getEstadisticas() {
     return this->estadisticas;
 }
 
-void Jugador::setNombre(std::string nombre) {
+void Personaje::setNombre(std::string nombre) {
     this->nombre = nombre;
 }
 
-void Jugador::setGenero(std::string genero) {
+void Personaje::setGenero(std::string genero) {
     this->genero = genero;
 }
 
-void Jugador::setEdad(int edad) {
+void Personaje::setEdad(int edad) {
     this->edad = edad;
 }
 
-void Jugador::setAlineamiento(std::string alineamiento) {
+void Personaje::setAlineamiento(std::string alineamiento) {
     this->alineamiento = alineamiento;
 }
 
-void Jugador::setRaza(Raza raza) {
+void Personaje::setRaza(Raza raza) {
     this->raza = raza;
 }
 
-void Jugador::setEstadisticas(Estadisticas estadisticas) {
+void Personaje::setEstadisticas(Estadisticas estadisticas) {
     this->estadisticas = estadisticas;
 }
 
-void Jugador::mostrarDatos() {
+void Personaje::mostrarDatos() {
     std::cout << "Nombre: " << this->nombre << std::endl;
     std::cout << "Genero: " << this->genero << std::endl;
     std::cout << "Edad: " << this->edad << std::endl;
@@ -118,7 +118,7 @@ void Jugador::mostrarDatos() {
     this->mostrarEstadisticas();
 }
 
-void Jugador::mostrarEstadisticas() {
+void Personaje::mostrarEstadisticas() {
     this->estadisticas.mostrarEstadisticas();
 }
 
