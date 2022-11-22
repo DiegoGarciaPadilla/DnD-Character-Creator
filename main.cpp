@@ -20,6 +20,7 @@ int main() {
         case 1:
             limpiarPantalla();
             personaje = crearPersonaje();
+            pausa();
             break;
         case 2:
             limpiarPantalla();
