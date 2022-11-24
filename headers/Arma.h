@@ -39,14 +39,14 @@ public:
 
 Arma::Arma()
 {
-    nombre = " ";
-    descripcion = " ";
-    peso = 0;
+    nombre = "Espada desgastada";
+    descripcion = "Es una espada de madera, con una hoja de acero oxidado. No parece muy útil.";
+    peso = 2;
     valor = 0;
-    subtipo = " ";
-    material = " ";
-    estado = 0;
-    daño = 0;
+    subtipo = "Espada";
+    material = "Madera y acero";
+    estado = 100;
+    daño = 10;
     alcance = 0;
     critico = 0;
     criticoMultiplicador = 0;

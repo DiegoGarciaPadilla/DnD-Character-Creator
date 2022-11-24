@@ -30,14 +30,14 @@ public:
 
 Armadura::Armadura()
 {
-    nombre = " ";
-    descripcion = " ";
-    peso = 0;
+    nombre = "Armadura desgastada";
+    descripcion = "Es una armadura de madera, con placas de acero oxidado. No parece muy útil.";
+    peso = 2;
     valor = 0;
-    subtipo = " ";
-    material = " ";
-    estado = 0;
-    defensa = 0;
+    subtipo = "Armadura";
+    material = "Madera y acero";
+    estado = 100;
+    defensa = 10;
 }
 
 Armadura::Armadura(std::string nombre, std::string descripcion, int peso, int valor, std::string subtipo, std::string material, int estado, int defensa)
