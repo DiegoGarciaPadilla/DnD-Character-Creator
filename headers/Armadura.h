@@ -14,8 +14,8 @@ private:
     int defensa;
 public:
     // Constructores
-    Armadura();
-    Armadura(std::string nombre, std::string descripcion, int peso, int valor, std::string subtipo, std::string material, int estado, int defensa);
+    Armadura(): Objeto() {};
+    Armadura(std::string nombre, std::string descripcion, int peso, int valor, std::string subtipo, std::string material, int estado, int defensa): Objeto(nombre, descripcion, peso, valor, subtipo, material, estado), defensa(defensa) {};
 
     // Getters
     std::string getTipo();
