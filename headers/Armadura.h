@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <string>
+#include "Objeto.h"
 
 class Armadura: public Objeto
 {
@@ -83,3 +84,5 @@ void Armadura::mostrarDatos()
     std::cout << "Estado: " << estado << std::endl;
     std::cout << "Defensa: " << defensa << std::endl;
 }
+
+#endif

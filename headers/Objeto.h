@@ -8,7 +8,7 @@
 
 class Objeto
 {
-private:
+protected:
     std::string nombre;
     std::string descripcion;
     int peso;
@@ -45,20 +45,20 @@ public:
 
     // Metodos
     void mostrarDatos();
-}
+};
 
 // Constructor por defecto
 
 Objeto::Objeto()
 {
-    nombre = " ";
-    descripcion = " ";
-    peso = 0;
+    nombre = "Objeto";
+    descripcion = "Es un objeto.";
+    peso = 1;
     valor = 0;
-    tipo = " ";
-    subtipo = " ";
-    material = " ";
-    estado = 0;
+    tipo = "Objeto";
+    subtipo = "Objeto";
+    material = "Objeto";
+    estado = 100;
 }
 
 // Constructor con parametros

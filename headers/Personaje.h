@@ -8,6 +8,8 @@
 #include <cstdlib>
 #include "Raza.h"
 #include "Estadisticas.h"
+#include "Arma.h"
+#include "Armadura.h"
 
 class Personaje
 {
@@ -18,6 +20,8 @@ private:
     std::string alineamiento;
     Raza raza;
     Estadisticas estadisticas;
+    Arma arma;
+    Armadura armadura;
 
 public:
     // Constructores
@@ -31,6 +35,8 @@ public:
     std::string getAlineamiento();
     Raza getRaza();
     Estadisticas getEstadisticas();
+    Arma getArma();
+    Armadura getArmadura();
 
     // Setters
     void setNombre(std::string nombre);
@@ -39,6 +45,8 @@ public:
     void setAlineamiento(std::string alineamiento);
     void setRaza(Raza raza);
     void setEstadisticas(Estadisticas estadisticas);
+    void setArma(Arma arma);
+    void setArmadura(Armadura armadura);
 
     // Metodos
     void mostrarDatos();
@@ -53,6 +61,8 @@ Personaje::Personaje()
     alineamiento = " ";
     raza = Raza();
     estadisticas = Estadisticas();
+    arma = Arma();
+    armadura = Armadura();
 }
 
 Personaje::Personaje(std::string nombre, std::string genero, int edad, std::string alineamiento, Raza raza, Estadisticas estadisticas)
@@ -63,7 +73,11 @@ Personaje::Personaje(std::string nombre, std::string genero, int edad, std::stri
     this->alineamiento = alineamiento;
     this->raza = raza;
     this->estadisticas = estadisticas;
+    arma = Arma();
+    armadura = Armadura();
 }
+
+// Getters
 
 std::string Personaje::getNombre()
 {
@@ -95,6 +109,18 @@ Estadisticas Personaje::getEstadisticas()
     return this->estadisticas;
 }
 
+Arma Personaje::getArma()
+{
+    return this->arma;
+}
+
+Armadura Personaje::getArmadura()
+{
+    return this->armadura;
+}
+
+// Setters
+
 void Personaje::setNombre(std::string nombre)
 {
     this->nombre = nombre;
@@ -125,14 +151,36 @@ void Personaje::setEstadisticas(Estadisticas estadisticas)
     this->estadisticas = estadisticas;
 }
 
+void Personaje::setArma(Arma arma)
+{
+    this->arma = arma;
+}
+
+void Personaje::setArmadura(Armadura armadura)
+{
+    this->armadura = armadura;
+}
+
+// Metodos
+
 void Personaje::mostrarDatos()
 {
+    std::cout << "DATOS DEL PERSONAJE" << nombre << std::endl;
     std::cout << "Nombre: " << this->nombre << std::endl;
     std::cout << "Genero: " << this->genero << std::endl;
     std::cout << "Edad: " << this->edad << std::endl;
     std::cout << "Alineamiento: " << this->alineamiento << std::endl;
     std::cout << "Raza: " << this->raza.getNombre() << std::endl;
+    std::cout << std::endl;
+    std::cout << "DATOS DE LAS ESTADISTICAS" << std::endl;
     this->mostrarEstadisticas();
+    std::cout << std::endl;
+    std::cout << "DATOS DEL ARMA" << std::endl;
+    arma.mostrarDatos();
+    std::cout << std::endl;
+    std::cout << "DATOS DE LA ARMADURA" << std::endl;
+    armadura.mostrarDatos();
+    std::cout << std::endl;
 }
 
 void Personaje::mostrarEstadisticas()

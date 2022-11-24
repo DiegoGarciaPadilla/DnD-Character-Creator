@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <string>
+#include "Objeto.h"
 
 class Arma: public Objeto
 {
@@ -133,5 +134,4 @@ void Arma::mostrarDatos()
     std::cout << "Critico Multiplicador: " << criticoMultiplicador << std::endl;
 }
 
-
-
+#endif
