@@ -17,8 +17,10 @@ private:
     int criticoMultiplicador;
 public:
     // Constructores
-    Arma(): Objeto() {};
-    Arma(std::string nombre, std::string descripcion, int peso, int valor, std::string subtipo, std::string material, int estado, int daño, int alcance, int critico, int criticoMultiplicador): Objeto(nombre, descripcion, peso, valor, subtipo, material, estado), daño(daño), alcance(alcance), critico(critico), criticoMultiplicador(criticoMultiplicador) {};
+    Arma() {};
+    Arma(std::string nombre, std::string descripcion, int peso, int valor, 
+        std::string subtipo, std::string material, int estado, int daño, int alcance, 
+        int critico, int criticoMultiplicador) {};
 
     // Getters
     std::string getTipo();
