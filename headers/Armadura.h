@@ -7,16 +7,16 @@
 #include <string>
 #include "Objeto.h"
 
-class Armadura: public Objeto
+class Armadura : public Objeto
 {
 private:
     std::string tipo = "Armadura";
     int defensa;
+
 public:
     // Constructores
-    Armadura(){};
-    Armadura(std::string nombre, std::string descripcion, int peso, int valor, std::string subtipo, 
-    std::string material, int estado, int defensa): {};
+    Armadura();
+    Armadura(std::string nombre, std::string descripcion, int peso, int valor, std::string subtipo, std::string material, int estado, int defensa);
 
     // Getters
     std::string getTipo();

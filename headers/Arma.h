@@ -7,7 +7,7 @@
 #include <string>
 #include "Objeto.h"
 
-class Arma: public Objeto
+class Arma : public Objeto
 {
 private:
     std::string tipo = "Arma";
@@ -15,10 +15,11 @@ private:
     int alcance;
     int critico;
     int criticoMultiplicador;
+
 public:
     // Constructores
-    Arma() {};
-    Arma(std::string nombre, std::string descripcion, int peso, int valor, std::string subtipo, std::string material, int estado, int daño, int alcance, int critico, int criticoMultiplicador) {};
+    Arma();
+    Arma(std::string nombre, std::string descripcion, int peso, int valor, std::string subtipo, std::string material, int estado, int daño, int alcance, int critico, int criticoMultiplicador);
 
     // Getters
     std::string getTipo();

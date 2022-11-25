@@ -1,22 +1,25 @@
-#include<iostream>
-#include<string>
-#include<cstdlib>
+#include <iostream>
+#include <string>
+#include <cstdlib>
 
-#include"headers\Funciones.h"
-#include"headers\Personaje.h"
-#include"headers\Estadisticas.h"
-#include"headers\Raza.h"
+#include "headers\Funciones.h"
+#include "headers\Personaje.h"
+#include "headers\Estadisticas.h"
+#include "headers\Raza.h"
 
-int main() {
+int main()
+{
 
     int opcion;
     Personaje personaje;
 
-    do {
+    do
+    {
         menuPrincipal();
         std::cin >> opcion;
 
-        switch (opcion) {
+        switch (opcion)
+        {
         case 1:
             limpiarPantalla();
             personaje = crearPersonaje();
@@ -24,26 +27,22 @@ int main() {
             break;
         case 2:
             limpiarPantalla();
-            std::cout << "Opcion en desarrollo" << std::endl;
-            pausa();
-            break;
-        case 3:
-            limpiarPantalla();
-            if (personaje.getNombre() != " ") {
+            if (personaje.getNombre() != " ")
+            {
                 personaje.mostrarDatos();
             }
-            else {
+            else
+            {
                 std::cout << "No hay personaje creado" << std::endl;
             }
             pausa();
             break;
-        case 4:
+        case 3:
             break;
         default:
             break;
         }
-    } while (opcion != 4);
+    } while (opcion != 3);
 
     return 0;
-
 }
