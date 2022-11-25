@@ -51,6 +51,7 @@ public:
     // Metodos
     void mostrarDatos();
     void mostrarEstadisticas();
+    void definirEstadisticas();
 };
 
 Personaje::Personaje()
@@ -186,6 +187,11 @@ void Personaje::mostrarDatos()
 void Personaje::mostrarEstadisticas()
 {
     this->estadisticas.mostrarEstadisticas();
+}
+
+void Personaje::definirEstadisticas(Raza raza)
+{
+    this->estadisticas = Estadisticas(raza);
 }
 
 #endif

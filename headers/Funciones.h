@@ -68,7 +68,6 @@ Personaje crearPersonaje()
     std::string nombre, genero, alineamiento;
     int edad, opcion;
     Raza raza;
-    Estadisticas estadisticas;
 
     limpiarPantalla();
 
@@ -171,8 +170,7 @@ Personaje crearPersonaje()
 
     std::cout << "Estadisticas: " << std::endl;
     std::cout << "Las estadisticas se generan aleatoriamente" << std::endl;
-    estadisticas = Estadisticas(personaje.getRaza());
-    personaje.setEstadisticas(estadisticas);
+    personaje.definirEstadisticas(personaje.getRaza());
 
     return personaje;
 }
