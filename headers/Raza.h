@@ -56,14 +56,14 @@ public:
 
 Raza::Raza()
 {
-    nombre = " ";
-    descripcion = " ";
-    modificadorFuerza = 0;
-    modificadorDestreza = 0;
-    modificadorConstitucion = 0;
-    modificadorInteligencia = 0;
-    modificadorSabiduria = 0;
-    modificadorCarisma = 0;
+    nombre = "Humano";
+    descripcion = "En los registros de la mayoría de los mundos, los humanos son la más joven de las  comunes. Han llegado comparativamente tarde al mundo y sus vidas son más cortas que las de enanos, elfos y dragones. Y quizá sea precisamente por estas breves existencias por lo que los humanos aspiran a conseguir tanto como sean capaces en los años que se les han concedido.";
+    modificadorFuerza = 1;
+    modificadorDestreza = 1;
+    modificadorConstitucion = 1;
+    modificadorInteligencia = 1;
+    modificadorSabiduria = 1;
+    modificadorCarisma = 1;
 }
 
 // Constructor con parametros
@@ -220,6 +220,20 @@ Raza *inicializarRazas()
 
     // Devolver el array de razas
     return razas;
+}
+
+// Funcion para mostrar la informacion de una raza
+
+void mostrarInfoRaza(Raza *razas, int opcion)
+{
+    std::cout << "Nombre: " << razas[opcion - 1].getNombre() << std::endl;
+    std::cout << "Descripcion: " << razas[opcion - 1].getDescripcion() << std::endl;
+    std::cout << "Modificador de Fuerza: " << razas[opcion - 1].getModificadorFuerza() << std::endl;
+    std::cout << "Modificador de Destreza: " << razas[opcion - 1].getModificadorDestreza() << std::endl;
+    std::cout << "Modificador de Constitucion: " << razas[opcion - 1].getModificadorConstitucion() << std::endl;
+    std::cout << "Modificador de Inteligencia: " << razas[opcion - 1].getModificadorInteligencia() << std::endl;
+    std::cout << "Modificador de Sabiduria: " << razas[opcion - 1].getModificadorSabiduria() << std::endl;
+    std::cout << "Modificador de Carisma: " << razas[opcion - 1].getModificadorCarisma() << std::endl;
 }
 
 #endif
