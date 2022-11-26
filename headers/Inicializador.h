@@ -9,8 +9,126 @@
 #include<sstream>
 #include<vector>
 
+#include "Arma.h"
+#include "Armadura.h"
 #include "Raza.h"
 #include "Clase.h"
+
+// Arma
+
+// Funcion para inicializar las armas
+
+Arma *inicializarArmas()
+{
+    // Abrir el archivo
+    std::ifstream archivo("./data/armas.txt");
+    // Comprobar que el archivo se ha abierto correctamente
+    if (!archivo.is_open())
+    {
+        std::cout << "Error al abrir el archivo" << std::endl;
+        return nullptr;
+    }
+
+    // Leer la primera linea para saber el numero de armas
+    std::string linea;
+    std::getline(archivo, linea);
+    int numArmas = std::stoi(linea);
+
+    // Crear el array de armas
+    Arma *armas = new Arma[numArmas];
+
+    // Leer el resto de lineas
+    int i = 0;
+    while (std::getline(archivo, linea))
+    {
+        std::stringstream ss(linea);
+        std::string token;
+        std::vector<std::string> tokens;
+        while (std::getline(ss, token, '|'))
+        {
+            tokens.push_back(token);
+        }
+        // Crear el arma
+        Arma arma(tokens[0], tokens[1], std::stoi(tokens[2]), std::stoi(tokens[3]), tokens[4], tokens[5], std::stoi(tokens[6]));
+        // Guardar el arma en el array
+        armas[i] = arma;
+        i++;
+    }
+
+    // Cerrar el archivo
+    archivo.close();
+
+    // Devolver el array de armas
+    return armas;
+}
+
+// Funcion para mostrar todas las armas
+
+void mostrarArmas(Arma *armas, int numArmas)
+{
+    for (int i = 0; i < numArmas; i++)
+    {
+        std::cout << i + 1 << ". " << armas[i].getNombre() << std::endl;
+    }
+}
+
+// Armadura
+
+// Funcion para inicializar los objetos de tipo Armadura
+
+Armadura *inicializarArmaduras()
+{
+    // Abrir el archivo
+    std::ifstream archivo("./data/armaduras.txt");
+    // Comprobar que el archivo se ha abierto correctamente
+    if (!archivo.is_open())
+    {
+        std::cout << "Error al abrir el archivo" << std::endl;
+        return nullptr;
+    }
+
+    // Leer la primera linea para saber el numero de armaduras
+    std::string linea;
+    std::getline(archivo, linea);
+    int numArmaduras = std::stoi(linea);
+
+    // Crear el array de armaduras
+    Armadura *armaduras = new Armadura[numArmaduras];
+
+    // Leer el resto de lineas
+    int i = 0;
+    while (std::getline(archivo, linea))
+    {
+        std::stringstream ss(linea);
+        std::string token;
+        std::vector<std::string> tokens;
+        while (std::getline(ss, token, '|'))
+        {
+            tokens.push_back(token);
+        }
+        // Crear la armadura
+        Armadura armadura(tokens[0], tokens[1], std::stoi(tokens[2]), std::stoi(tokens[3]), tokens[4], tokens[5], std::stoi(tokens[6]));
+        // Agregar la armadura al array
+        armaduras[i] = armadura; 
+        i++;
+    }
+
+    // Cerrar el archivo
+    archivo.close();
+
+    // Devolver el array de armaduras
+    return armaduras;
+}
+
+// Funcion para mostrar todas las armaduras
+
+void mostrarArmaduras(Armadura *armaduras, int numArmaduras)
+{
+    for (int i = 0; i < numArmaduras; i++)
+    {
+        std::cout << i + 1 << ". " << armaduras[i].getNombre() << std::endl;
+    }
+}
 
 // Razas
 
