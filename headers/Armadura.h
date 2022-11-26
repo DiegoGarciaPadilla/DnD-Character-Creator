@@ -16,7 +16,7 @@ private:
 public:
     // Constructores
     Armadura();
-    Armadura(std::string nombre, std::string descripcion, int peso, int valor, std::string subtipo, std::string material, int estado, int defensa);
+    Armadura(std::string nombre, std::string descripcion, int peso, int valor, std::string subtipo, std::string material, int defensa);
 
     // Getters
     std::string getTipo();
@@ -30,6 +30,10 @@ public:
     void mostrarDatos();
 };
 
+// Constructores
+
+// Constructor por defecto
+
 Armadura::Armadura()
 {
     nombre = "Armadura desgastada";
@@ -38,11 +42,12 @@ Armadura::Armadura()
     valor = 0;
     subtipo = "Armadura";
     material = "Madera y acero";
-    estado = 100;
     defensa = 10;
 }
 
-Armadura::Armadura(std::string nombre, std::string descripcion, int peso, int valor, std::string subtipo, std::string material, int estado, int defensa)
+// Constructor con parametros
+
+Armadura::Armadura(std::string nombre, std::string descripcion, int peso, int valor, std::string subtipo, std::string material, int defensa)
 {
     this->nombre = nombre;
     this->descripcion = descripcion;
@@ -50,29 +55,24 @@ Armadura::Armadura(std::string nombre, std::string descripcion, int peso, int va
     this->valor = valor;
     this->subtipo = subtipo;
     this->material = material;
-    this->estado = estado;
     this->defensa = defensa;
 }
 
-std::string Armadura::getTipo()
-{
-    return tipo;
-}
+// Getters
 
 int Armadura::getDefensa()
 {
     return defensa;
 }
 
-void Armadura::setTipo(std::string tipo)
-{
-    this->tipo = tipo;
-}
+// Setters
 
 void Armadura::setDefensa(int defensa)
 {
     this->defensa = defensa;
 }
+
+// Metodos
 
 void Armadura::mostrarDatos()
 {
@@ -82,8 +82,55 @@ void Armadura::mostrarDatos()
     std::cout << "Valor: " << valor << std::endl;
     std::cout << "Subtipo: " << subtipo << std::endl;
     std::cout << "Material: " << material << std::endl;
-    std::cout << "Estado: " << estado << std::endl;
     std::cout << "Defensa: " << defensa << std::endl;
+}
+
+// Funciones 
+
+// Funcion para inicializar los objetos de tipo Armadura
+
+Armadura *inicializarArmaduras()
+{
+    // Abrir el archivo
+    std::ifstream archivo("./data/armaduras.txt");
+    // Comprobar que el archivo se ha abierto correctamente
+    if (!archivo.is_open())
+    {
+        std::cout << "Error al abrir el archivo" << std::endl;
+        return nullptr;
+    }
+
+    // Leer la primera linea para saber el numero de armaduras
+    std::string linea;
+    std::getline(archivo, linea);
+    int numArmaduras = std::stoi(linea);
+
+    // Crear el array de armaduras
+    Armadura *armaduras = new Armadura[numArmaduras];
+
+    // Leer el resto de lineas
+    int i = 0;
+    while (std::getline(archivo, linea))
+    {
+        std::stringstream ss(linea);
+        std::string token;
+        std::vector<std::string> tokens;
+        while (std::getline(ss, token, '|'))
+        {
+            tokens.push_back(token);
+        }
+        // Crear la armadura
+        Armadura armadura(tokens[0], tokens[1], std::stoi(tokens[2]), std::stoi(tokens[3]), tokens[4], tokens[5], std::stoi(tokens[6]));
+        // Agregar la armadura al array
+        armaduras[i] = armadura; 
+        i++;
+    }
+
+    // Cerrar el archivo
+    archivo.close();
+
+    // Devolver el array de armaduras
+    return armaduras;
 }
 
 #endif

@@ -12,12 +12,10 @@ class Arma : public Objeto
 private:
     std::string tipo = "Arma";
     int daño;
-}
-
 public:
     // Constructores
     Arma();
-    Arma(std::string nombre, std::string descripcion, int peso, int valor, std::string subtipo, std::string material, int estado, int daño);
+    Arma(std::string nombre, std::string descripcion, int peso, int valor, std::string subtipo, std::string material,int daño);
 
     // Getters
     std::string getTipo();
@@ -31,10 +29,14 @@ public:
     void mostrarDatos();
 };
 
+// Constructores
+
+// Constructor por defecto
+
 Arma::Arma()
 {
-    nombre = "Espada desgastada";
-    descripcion = "Es una espada de madera, con una hoja de acero oxidado. No parece muy útil.";
+    nombre = "Espada oxidada";
+    descripcion = "Es una espada oxidada, con el filo muy desgastado. No parece muy útil.";
     peso = 2;
     valor = 0;
     subtipo = "Espada";
@@ -42,7 +44,9 @@ Arma::Arma()
     daño = 10;
 }
 
-Arma::Arma(std::string nombre, std::string descripcion, int peso, int valor, std::string subtipo, std::string material, int estado, int daño)
+// Constructor con parametros
+
+Arma::Arma(std::string nombre, std::string descripcion, int peso, int valor, std::string subtipo, std::string material, int daño)
 {
     this->nombre = nombre;
     this->descripcion = descripcion;
@@ -50,29 +54,24 @@ Arma::Arma(std::string nombre, std::string descripcion, int peso, int valor, std
     this->valor = valor;
     this->subtipo = subtipo;
     this->material = material;
-    this->estado = estado;
     this->daño = daño;
 }
 
-std::string Arma::getTipo()
-{
-    return tipo;
-}
+// Getters
 
 int Arma::getDaño()
 {
     return daño;
 }
 
-void Arma::setTipo(std::string tipo)
-{
-    this->tipo = tipo;
-}
+// Setters
 
 void Arma::setDaño(int daño)
 {
     this->daño = daño;
 }
+
+// Metodos
 
 void Arma::mostrarDatos()
 {
@@ -83,8 +82,53 @@ void Arma::mostrarDatos()
     std::cout << "Tipo: " << tipo << std::endl;
     std::cout << "Subtipo: " << subtipo << std::endl;
     std::cout << "Material: " << material << std::endl;
-    std::cout << "Estado: " << estado << std::endl;
     std::cout << "Daño: " << daño << std::endl;
+}
+
+// Funcion para inicializar las armas
+
+Arma *inicializarArmas()
+{
+    // Abrir el archivo
+    std::ifstream archivo("./data/armas.txt");
+    // Comprobar que el archivo se ha abierto correctamente
+    if (!archivo.is_open())
+    {
+        std::cout << "Error al abrir el archivo" << std::endl;
+        return nullptr;
+    }
+
+    // Leer la primera linea para saber el numero de armas
+    std::string linea;
+    std::getline(archivo, linea);
+    int numArmas = std::stoi(linea);
+
+    // Crear el array de armas
+    Arma *armas = new Arma[numArmas];
+
+    // Leer el resto de lineas
+    int i = 0;
+    while (std::getline(archivo, linea))
+    {
+        std::stringstream ss(linea);
+        std::string token;
+        std::vector<std::string> tokens;
+        while (std::getline(ss, token, '|'))
+        {
+            tokens.push_back(token);
+        }
+        // Crear el arma
+        Arma arma(tokens[0], tokens[1], std::stoi(tokens[2]), std::stoi(tokens[3]), tokens[4], tokens[5], std::stoi(tokens[6]));
+        // Guardar el arma en el array
+        armas[i] = arma;
+        i++;
+    }
+
+    // Cerrar el archivo
+    archivo.close();
+
+    // Devolver el array de armas
+    return armas;
 }
 
 #endif

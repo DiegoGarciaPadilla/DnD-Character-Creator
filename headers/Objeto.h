@@ -16,12 +16,11 @@ protected:
     std::string tipo;
     std::string subtipo;
     std::string material;
-    int estado;
 
 public:
     // Constructores
     Objeto();
-    Objeto(std::string nombre, std::string descripcion, int peso, int valor, std::string tipo, std::string subtipo, std::string material, int estado);
+    Objeto(std::string nombre, std::string descripcion, int peso, int valor, std::string tipo, std::string subtipo, std::string material);
 
     // Getters
     std::string getNombre();
@@ -31,7 +30,6 @@ public:
     std::string getTipo();
     std::string getSubtipo();
     std::string getMaterial();
-    int getEstado();
 
     // Setters
     void setNombre(std::string nombre);
@@ -41,7 +39,6 @@ public:
     void setTipo(std::string tipo);
     void setSubtipo(std::string subtipo);
     void setMaterial(std::string material);
-    void setEstado(int estado);
 
     // Metodos
     void mostrarDatos();
@@ -58,12 +55,11 @@ Objeto::Objeto()
     tipo = "Objeto";
     subtipo = "Objeto";
     material = "Objeto";
-    estado = 100;
 }
 
 // Constructor con parametros
 
-Objeto::Objeto(std::string nombre, std::string descripcion, int peso, int valor, std::string tipo, std::string subtipo, std::string material, int estado)
+Objeto::Objeto(std::string nombre, std::string descripcion, int peso, int valor, std::string tipo, std::string subtipo, std::string material)
 {
     this->nombre = nombre;
     this->descripcion = descripcion;
@@ -72,7 +68,6 @@ Objeto::Objeto(std::string nombre, std::string descripcion, int peso, int valor,
     this->tipo = tipo;
     this->subtipo = subtipo;
     this->material = material;
-    this->estado = estado;
 }
 
 // Getters
@@ -112,11 +107,6 @@ std::string Objeto::getMaterial()
     return material;
 }
 
-int Objeto::getEstado()
-{
-    return estado;
-}
-
 // Setters
 
 void Objeto::setNombre(std::string nombre)
@@ -152,11 +142,6 @@ void Objeto::setSubtipo(std::string subtipo)
 void Objeto::setMaterial(std::string material)
 {
     this->material = material;
-}
-
-void Objeto::setEstado(int estado)
-{
-    this->estado = estado;
 }
 
 // Metodos
