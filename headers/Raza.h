@@ -9,6 +9,8 @@
 #include <sstream>
 #include <vector>
 
+#include "Inicializador.h"
+
 class Raza
 {
 private:
@@ -164,76 +166,18 @@ void Raza::setModificadorCarisma(int modificadorCarisma)
     this->modificadorCarisma = modificadorCarisma;
 }
 
-/* Funciones adicionales */
+// Metodos
 
-// Funcion para mostrar las razas
-
-void mostrarRazas(Raza *razas)
+void Raza::mostrarRaza()
 {
-    for (int i = 0; i < 9; i++)
-    {
-        std::cout << i + 1 << ". " << razas[i].getNombre() << std::endl;
-    }
-}
-
-// Funcion para inicializar las razas
-
-Raza *inicializarRazas()
-{
-    // Abrir el archivo
-    std::ifstream archivo("./data/razas.txt");
-    // Comprobar que el archivo se ha abierto correctamente
-    if (!archivo.is_open())
-    {
-        std::cout << "Error al abrir el archivo" << std::endl;
-        return nullptr;
-    }
-
-    // Leer la primera linea para saber el numero de razas
-    std::string linea;
-    std::getline(archivo, linea);
-    int numRazas = std::stoi(linea);
-
-    // Crear el array de razas
-    Raza *razas = new Raza[numRazas];
-
-    // Leer el resto de lineas
-    int i = 0;
-    while (std::getline(archivo, linea))
-    {
-        std::stringstream ss(linea);
-        std::string token;
-        std::vector<std::string> tokens;
-        while (std::getline(ss, token, '|'))
-        {
-            tokens.push_back(token);
-        }
-        // Crear la raza
-        Raza raza(tokens[0], tokens[1], std::stoi(tokens[2]), std::stoi(tokens[3]), std::stoi(tokens[4]), std::stoi(tokens[5]), std::stoi(tokens[6]), std::stoi(tokens[7]));
-        // Añadir la raza al array
-        razas[i] = raza;
-        i++;
-    }
-
-    // Cerrar el archivo
-    archivo.close();
-
-    // Devolver el array de razas
-    return razas;
-}
-
-// Funcion para mostrar la informacion de una raza
-
-void mostrarInfoRaza(Raza *razas, int opcion)
-{
-    std::cout << "Nombre: " << razas[opcion - 1].getNombre() << std::endl;
-    std::cout << "Descripcion: " << razas[opcion - 1].getDescripcion() << std::endl;
-    std::cout << "Modificador de Fuerza: " << razas[opcion - 1].getModificadorFuerza() << std::endl;
-    std::cout << "Modificador de Destreza: " << razas[opcion - 1].getModificadorDestreza() << std::endl;
-    std::cout << "Modificador de Constitucion: " << razas[opcion - 1].getModificadorConstitucion() << std::endl;
-    std::cout << "Modificador de Inteligencia: " << razas[opcion - 1].getModificadorInteligencia() << std::endl;
-    std::cout << "Modificador de Sabiduria: " << razas[opcion - 1].getModificadorSabiduria() << std::endl;
-    std::cout << "Modificador de Carisma: " << razas[opcion - 1].getModificadorCarisma() << std::endl;
+    std::cout << "Nombre: " << this->nombre << std::endl;
+    std::cout << "Descripcion: " << this->descripcion << std::endl;
+    std::cout << "Modificador de Fuerza: " << this->modificadorFuerza << std::endl;
+    std::cout << "Modificador de Destreza: " << this->modificadorDestreza << std::endl;
+    std::cout << "Modificador de Constitucion: " << this->modificadorConstitucion << std::endl;
+    std::cout << "Modificador de Inteligencia: " << this->modificadorInteligencia << std::endl;
+    std::cout << "Modificador de Sabiduria: " << this->modificadorSabiduria << std::endl;
+    std::cout << "Modificador de Carisma: " << this->modificadorCarisma << std::endl;
 }
 
 #endif
