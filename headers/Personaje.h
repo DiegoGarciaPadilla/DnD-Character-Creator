@@ -185,6 +185,7 @@ void Personaje::mostrarPersonaje()
     std::cout << "Edad: " << this->edad << std::endl;
     std::cout << "Alineamiento: " << this->alineamiento << std::endl;
     std::cout << "Raza: " << this->raza.getNombre() << std::endl;
+    std::cout << "Clase: " << this->clase.getNombre() << std::endl;
     std::cout << std::endl;
     std::cout << "DATOS DE LAS ESTADISTICAS" << std::endl;
     this->mostrarEstadisticas();
@@ -225,6 +226,8 @@ void Personaje::mostrarClase()
 void Personaje::definirClase(Clase *clases, int opcion)
 {
     clase = clases[opcion];
+    arma = clase.getArmaInicial();
+    armadura = clase.getArmaduraInicial();
 }
 
 #endif

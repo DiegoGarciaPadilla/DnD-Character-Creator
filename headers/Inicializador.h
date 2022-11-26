@@ -14,6 +14,62 @@
 #include "Raza.h"
 #include "Clase.h"
 
+// Genero
+
+// Funcion para inicializar a los generos
+
+std::string *inicializarGeneros()
+{
+    std::string *generos = new std::string[3];
+    generos[0] = "Masculino";
+    generos[1] = "Femenino";
+    generos[2] = "Otro";
+
+    return generos;
+}
+
+// Funcion para mostrar los generos
+
+void mostrarGeneros(std::string *generos, int numGeneros)
+{
+    for (int i = 0; i < numGeneros; i++)
+    {
+        std::cout << i + 1 << ". " << generos[i] << std::endl;
+    }
+}
+// Alineamientos
+
+// Funcion para inicializar array de alineamientos
+
+std::string *inicializarAlineamientos()
+{
+    std::string *alineamientos = new std::string[9];
+    alineamientos[0] = "Legal Bueno";
+    alineamientos[1] = "Neutral Bueno";
+    alineamientos[2] = "Caotico Bueno";
+    alineamientos[3] = "Legal Neutral";
+    alineamientos[4] = "Neutral";
+    alineamientos[5] = "Caotico Neutral";
+    alineamientos[6] = "Legal Malo";
+    alineamientos[7] = "Neutral Malo";
+    alineamientos[8] = "Caotico Malo";
+
+    return alineamientos;
+}
+
+// Funcion para mostrar array de alineamientos
+
+// Funcion para mostrar las opciones de alineamiento
+
+void mostrarAlineamientos(std::string *alineamientos, int numAlineamientos)
+{
+    for (int i = 0; i < numAlineamientos; i++)
+    {
+        std::cout << i + 1 << ". " << alineamientos[i] << std::endl;
+    }
+}
+
+
 // Arma
 
 // Funcion para inicializar las armas
