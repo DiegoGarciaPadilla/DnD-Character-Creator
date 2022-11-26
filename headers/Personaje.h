@@ -30,7 +30,8 @@ private:
 public:
     // Constructores
     Personaje();
-    Personaje(std::string nombre, std::string genero, int edad, std::string alineamiento, Clase clase, Raza raza, Estadisticas estadisticas, Arma arma, Armadura armadura);
+    Personaje(std::string nombre, std::string genero, int edad, std::string alineamiento, 
+        Clase clase, Raza raza, Estadisticas estadisticas, Arma arma, Armadura armadura);
 
     // Getters
     std::string getNombre();
@@ -55,7 +56,7 @@ public:
     void setArmadura(Armadura armadura);
 
     // Metodos
-    void mostrarDatos();
+    void mostrarPersonaje();
     void mostrarRaza();
     void definirRaza(Raza *razas,int opcion);
     void mostrarEstadisticas();
@@ -176,7 +177,7 @@ void Personaje::setArmadura(Armadura armadura)
 
 // Metodos
 
-void Personaje::mostrarDatos()
+void Personaje::mostrarPersonaje()
 {
     std::cout << "DATOS DEL PERSONAJE" << nombre << std::endl;
     std::cout << "Nombre: " << this->nombre << std::endl;
