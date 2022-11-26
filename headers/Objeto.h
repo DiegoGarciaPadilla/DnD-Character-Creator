@@ -20,7 +20,8 @@ protected:
 public:
     // Constructores
     Objeto();
-    Objeto(std::string nombre, std::string descripcion, int peso, int valor, std::string tipo, std::string subtipo, std::string material);
+    Objeto(std::string nombre, std::string descripcion, int peso, int valor, 
+        std::string tipo, std::string subtipo, std::string material);
 
     // Getters
     std::string getNombre();
@@ -59,7 +60,8 @@ Objeto::Objeto()
 
 // Constructor con parametros
 
-Objeto::Objeto(std::string nombre, std::string descripcion, int peso, int valor, std::string tipo, std::string subtipo, std::string material)
+Objeto::Objeto(std::string nombre, std::string descripcion, int peso, int valor, 
+    std::string tipo, std::string subtipo, std::string material)
 {
     this->nombre = nombre;
     this->descripcion = descripcion;

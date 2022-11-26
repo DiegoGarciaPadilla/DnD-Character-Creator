@@ -68,7 +68,9 @@ Raza::Raza()
 
 // Constructor con parametros
 
-Raza::Raza(std::string nombre, std::string descripcion, int modificadorFuerza, int modificadorDestreza, int modificadorConstitucion, int modificadorInteligencia, int modificadorSabiduria, int modificadorCarisma)
+Raza::Raza(std::string nombre, std::string descripcion, int modificadorFuerza, 
+int modificadorDestreza, int modificadorConstitucion, int modificadorInteligencia, 
+int modificadorSabiduria, int modificadorCarisma)
 {
     this->nombre = nombre;
     this->descripcion = descripcion;

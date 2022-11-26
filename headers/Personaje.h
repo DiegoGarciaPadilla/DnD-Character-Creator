@@ -78,7 +78,8 @@ Personaje::Personaje()
     armadura = Armadura();
 }
 
-Personaje::Personaje(std::string nombre, std::string genero, int edad, std::string alineamiento, Clase clase, Raza raza, Estadisticas estadisticas, Arma arma, Armadura armadura)
+Personaje::Personaje(std::string nombre, std::string genero, int edad, std::string alineamiento, 
+    Clase clase, Raza raza, Estadisticas estadisticas, Arma arma, Armadura armadura)
 {
     this->nombre = nombre;
     this->genero = genero;

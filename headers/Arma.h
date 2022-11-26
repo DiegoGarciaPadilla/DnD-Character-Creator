@@ -13,10 +13,12 @@ class Arma : public Objeto
 private:
     std::string tipo = "Arma";
     int daño;
+
 public:
     // Constructores
     Arma();
-    Arma(std::string nombre, std::string descripcion, int peso, int valor, std::string subtipo, std::string material,int daño);
+    Arma(std::string nombre, std::string descripcion, int peso, int valor, std::string subtipo,
+        std::string material, int daño);
 
     // Getters
     std::string getTipo();
@@ -47,7 +49,8 @@ Arma::Arma()
 
 // Constructor con parametros
 
-Arma::Arma(std::string nombre, std::string descripcion, int peso, int valor, std::string subtipo, std::string material, int daño)
+Arma::Arma(std::string nombre, std::string descripcion, int peso, int valor, std::string subtipo, 
+    std::string material, int daño)
 {
     this->nombre = nombre;
     this->descripcion = descripcion;

@@ -3,11 +3,11 @@
 #ifndef INICIALIZADOR_H
 #define INICIALIZADOR_H
 
-#include<iostream>
-#include<fstream>
-#include<string>
-#include<sstream>
-#include<vector>
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <sstream>
+#include <vector>
 
 #include "Arma.h"
 #include "Armadura.h"
@@ -69,7 +69,6 @@ void mostrarAlineamientos(std::string *alineamientos, int numAlineamientos)
     }
 }
 
-
 // Arma
 
 // Funcion para inicializar las armas
@@ -105,7 +104,8 @@ Arma *inicializarArmas()
             tokens.push_back(token);
         }
         // Crear el arma
-        Arma arma(tokens[0], tokens[1], std::stoi(tokens[2]), std::stoi(tokens[3]), tokens[4], tokens[5], std::stoi(tokens[6]));
+        Arma arma(tokens[0], tokens[1], std::stoi(tokens[2]), std::stoi(tokens[3]),
+                  tokens[4], tokens[5], std::stoi(tokens[6]));
         // Guardar el arma en el array
         armas[i] = arma;
         i++;
@@ -163,9 +163,10 @@ Armadura *inicializarArmaduras()
             tokens.push_back(token);
         }
         // Crear la armadura
-        Armadura armadura(tokens[0], tokens[1], std::stoi(tokens[2]), std::stoi(tokens[3]), tokens[4], tokens[5], std::stoi(tokens[6]));
+        Armadura armadura(tokens[0], tokens[1], std::stoi(tokens[2]), std::stoi(tokens[3]), 
+            tokens[4], tokens[5], std::stoi(tokens[6]));
         // Agregar la armadura al array
-        armaduras[i] = armadura; 
+        armaduras[i] = armadura;
         i++;
     }
 
@@ -221,7 +222,8 @@ Raza *inicializarRazas()
             tokens.push_back(token);
         }
         // Crear la raza
-        Raza raza(tokens[0], tokens[1], std::stoi(tokens[2]), std::stoi(tokens[3]), std::stoi(tokens[4]), std::stoi(tokens[5]), std::stoi(tokens[6]), std::stoi(tokens[7]));
+        Raza raza(tokens[0], tokens[1], std::stoi(tokens[2]), std::stoi(tokens[3]), 
+            std::stoi(tokens[4]), std::stoi(tokens[5]), std::stoi(tokens[6]), std::stoi(tokens[7]));
         // Añadir la raza al array
         razas[i] = raza;
         i++;

@@ -22,7 +22,8 @@ private:
 public:
     // Constructores
     Clase();
-    Clase(std::string nombre, std::string descripcion, Arma armaInicial, Armadura armaduraInicial);
+    Clase(std::string nombre, std::string descripcion, Arma armaInicial, 
+        Armadura armaduraInicial);
 
     // Getters
     std::string getNombre();

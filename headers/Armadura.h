@@ -17,7 +17,8 @@ private:
 public:
     // Constructores
     Armadura();
-    Armadura(std::string nombre, std::string descripcion, int peso, int valor, std::string subtipo, std::string material, int defensa);
+    Armadura(std::string nombre, std::string descripcion, int peso, int valor,
+        std::string subtipo, std::string material, int defensa);
 
     // Getters
     std::string getTipo();
@@ -48,7 +49,8 @@ Armadura::Armadura()
 
 // Constructor con parametros
 
-Armadura::Armadura(std::string nombre, std::string descripcion, int peso, int valor, std::string subtipo, std::string material, int defensa)
+Armadura::Armadura(std::string nombre, std::string descripcion, int peso, int valor, 
+    std::string subtipo, std::string material, int defensa)
 {
     this->nombre = nombre;
     this->descripcion = descripcion;

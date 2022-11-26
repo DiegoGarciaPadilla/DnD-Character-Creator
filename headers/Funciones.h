@@ -53,7 +53,8 @@ void crearPersonaje(Personaje &personaje)
     std::cout << "Genero: " << std::endl;
     mostrarGeneros(inicializarGeneros(), 3);
     std::cin >> opcion;
-    while (opcion < 1 || opcion > 3) {
+    while (opcion < 1 || opcion > 3)
+    {
         std::cout << "Opcion no valida" << std::endl;
         std::cin >> opcion;
     }

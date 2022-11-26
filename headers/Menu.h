@@ -151,7 +151,6 @@ void menuArmaduras()
     } while (opcion != 10);
 
     delete[] armaduras;
-
 }
 
 // Funcion para mostrar el menu de enciclopedia
