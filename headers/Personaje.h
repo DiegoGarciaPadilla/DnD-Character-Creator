@@ -6,10 +6,13 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+
 #include "Raza.h"
+#include "Clase.h"
 #include "Estadisticas.h"
 #include "Arma.h"
 #include "Armadura.h"
+#include "Inicializador.h"
 
 class Personaje
 {
@@ -19,6 +22,7 @@ private:
     int edad;
     std::string alineamiento;
     Raza raza;
+    Clase clase;
     Estadisticas estadisticas;
     Arma arma;
     Armadura armadura;
@@ -26,7 +30,7 @@ private:
 public:
     // Constructores
     Personaje();
-    Personaje(std::string nombre, std::string genero, int edad, std::string alineamiento, Raza raza, Estadisticas estadisticas);
+    Personaje(std::string nombre, std::string genero, int edad, std::string alineamiento, Clase clase, Raza raza, Estadisticas estadisticas, Arma arma, Armadura armadura);
 
     // Getters
     std::string getNombre();
@@ -34,6 +38,7 @@ public:
     int getEdad();
     std::string getAlineamiento();
     Raza getRaza();
+    Clase getClase();
     Estadisticas getEstadisticas();
     Arma getArma();
     Armadura getArmadura();
@@ -44,14 +49,19 @@ public:
     void setEdad(int edad);
     void setAlineamiento(std::string alineamiento);
     void setRaza(Raza raza);
+    void setClase(Clase clase);
     void setEstadisticas(Estadisticas estadisticas);
     void setArma(Arma arma);
     void setArmadura(Armadura armadura);
 
     // Metodos
     void mostrarDatos();
+    void mostrarRaza();
+    void definirRaza(Raza *razas,int opcion);
     void mostrarEstadisticas();
-    void definirEstadisticas();
+    void definirEstadisticas(Raza raza);
+    void mostrarClase();
+    void definirClase(Clase *clases, int opcion);
 };
 
 Personaje::Personaje()
@@ -59,23 +69,25 @@ Personaje::Personaje()
     nombre = " ";
     genero = " ";
     edad = 0;
-    alineamiento = " ";
+    alineamiento = "Neutral";
     raza = Raza();
+    clase = Clase();
     estadisticas = Estadisticas();
     arma = Arma();
     armadura = Armadura();
 }
 
-Personaje::Personaje(std::string nombre, std::string genero, int edad, std::string alineamiento, Raza raza, Estadisticas estadisticas)
+Personaje::Personaje(std::string nombre, std::string genero, int edad, std::string alineamiento, Clase clase, Raza raza, Estadisticas estadisticas, Arma arma, Armadura armadura)
 {
     this->nombre = nombre;
     this->genero = genero;
     this->edad = edad;
     this->alineamiento = alineamiento;
     this->raza = raza;
+    this->clase = clase;
     this->estadisticas = estadisticas;
-    arma = Arma();
-    armadura = Armadura();
+    this->arma = arma;
+    this->armadura = armadura;
 }
 
 // Getters
@@ -184,6 +196,16 @@ void Personaje::mostrarDatos()
     std::cout << std::endl;
 }
 
+void Personaje::mostrarRaza()
+{
+    raza.mostrarRaza();
+}
+
+void Personaje::definirRaza(Raza *razas, int opcion)
+{
+    raza = razas[opcion];
+}
+
 void Personaje::mostrarEstadisticas()
 {
     this->estadisticas.mostrarEstadisticas();
@@ -191,7 +213,17 @@ void Personaje::mostrarEstadisticas()
 
 void Personaje::definirEstadisticas(Raza raza)
 {
-    this->estadisticas = Estadisticas(raza);
+    estadisticas = Estadisticas(raza);
+}
+
+void Personaje::mostrarClase()
+{
+    clase.mostrarClase();
+}
+
+void Personaje::definirClase(Clase *clases, int opcion)
+{
+    clase = clases[opcion];
 }
 
 #endif

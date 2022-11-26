@@ -9,6 +9,7 @@
 #include <stdlib.h>
 
 #include "Raza.h"
+#include "Clase.h"
 #include "Estadisticas.h"
 #include "Personaje.h"
 
@@ -63,7 +64,6 @@ void mostrarAlineamientos()
 Personaje crearPersonaje()
 {
     Personaje personaje;
-    Raza *razas = inicializarRazas();
 
     std::string nombre, genero, alineamiento;
     int edad, opcion;
@@ -163,10 +163,28 @@ Personaje crearPersonaje()
     personaje.setAlineamiento(alineamiento);
 
     std::cout << "Raza: " << std::endl;
-    mostrarRazas(razas);
+    mostrarRazas(inicializarRazas(), 9);
     std::cin >> opcion;
+    while (opcion < 1 || opcion > 9)
+    {
+        std::cout << "Opcion no valida" << std::endl;
+        std::cout << "Raza: ";
+        std::cin >> opcion;
+    }
     std::cout << std::endl;
-    personaje.setRaza(razas[opcion - 1]);
+    personaje.definirRaza(inicializarRazas(), opcion);
+
+    std::cout << "Clase: " << std::endl;
+    mostrarClases(inicializarClases(), 9);
+    std::cin >> opcion;
+    while (opcion < 1 || opcion > 9)
+    {
+        std::cout << "Opcion no valida" << std::endl;
+        std::cout << "Clase: ";
+        std::cin >> opcion;
+    }
+    std::cout << std::endl;
+    personaje.definirClase(inicializarClases(),opcion);
 
     std::cout << "Estadisticas: " << std::endl;
     std::cout << "Las estadisticas se generan aleatoriamente" << std::endl;
