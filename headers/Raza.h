@@ -9,8 +9,6 @@
 #include <sstream>
 #include <vector>
 
-#include "Inicializador.h"
-
 class Raza
 {
 private:

@@ -9,7 +9,6 @@
 #include <sstream>
 #include <vector>
 
-#include "Inicializador.h"
 #include "Arma.h"
 #include "Armadura.h"
 

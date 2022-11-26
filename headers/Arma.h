@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <string>
+
 #include "Objeto.h"
 
 class Arma : public Objeto
