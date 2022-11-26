@@ -32,18 +32,6 @@ int tirarDado()
     return rand() % 20 + 1;
 }
 
-// Funciones de menu
-
-void menuPrincipal()
-{
-    limpiarPantalla();
-    std::cout << "Bienvenido al creador de personajes de D&D" << std::endl;
-    std::cout << std::endl;
-    std::cout << "1. Crear personaje" << std::endl;
-    std::cout << "2. Mostrar personaje" << std::endl;
-    std::cout << "3. Salir" << std::endl;
-}
-
 // Funcion para crear un personaje
 
 void crearPersonaje(Personaje &personaje)

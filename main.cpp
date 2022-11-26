@@ -4,15 +4,14 @@
 #include <string>
 #include <cstdlib>
 
+#include "headers\Menu.h"
 #include "headers\Inicializador.h"
 #include "headers\Funciones.h"
 #include "headers\Personaje.h"
-#include "headers\Estadisticas.h"
-#include "headers\Raza.h"
 
 int main()
 {
-    int opcion;
+    int opcion, opcionEnciclopedia;
     Personaje personaje;
 
     do {
@@ -35,6 +34,9 @@ int main()
             pausa();
             break;
         case 3:
+            menuEnciclopedia();
+            break;
+        case 4:
             std::cout << "Gracias por usar el creador de personajes de D&D" << std::endl;
             pausa();
             break;
@@ -44,6 +46,6 @@ int main()
             break;
         }
         limpiarPantalla();
-    } while (opcion != 3);
+    } while (opcion != 4);
 
 }
