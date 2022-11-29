@@ -45,7 +45,7 @@ void crearPersonaje(Personaje &personaje)
     std::cout << "Creacion de personaje" << std::endl;
     std::cout << std::endl;
 
-    std::cout << "Nombre: ";
+    std::cout << "Nombre (Solo una palabra): ";
     std::cin >> nombre;
     std::cout << std::endl;
     personaje.setNombre(nombre);
