@@ -51,9 +51,11 @@ void menuRazas()
             std::cin >> opcion;
         }
 
-        limpiarPantalla();
-        razas[opcion - 1].mostrarRaza();
-        pausa();
+        if (opcion != 10){
+            limpiarPantalla();
+            razas[opcion - 1].mostrarRaza();
+            pausa();
+        }
 
     } while (opcion != 10);
 
@@ -83,9 +85,13 @@ void menuClases()
             std::cin >> opcion;
         }
 
-        limpiarPantalla();
-        clases[opcion - 1].mostrarClase();
-        pausa();
+        if (opcion != 10)
+        {
+            limpiarPantalla();
+            clases[opcion - 1].mostrarClase();
+            pausa();
+        }
+
     } while (opcion != 10);
 
     delete[] clases;
@@ -114,9 +120,13 @@ void menuArmas()
             std::cin >> opcion;
         }
 
-        limpiarPantalla();
-        armas[opcion - 1].mostrarDatos();
-        pausa();
+        if (opcion != 10)
+        {
+            limpiarPantalla();
+            armas[opcion - 1].mostrarDatos();
+            pausa();
+        }
+
     } while (opcion != 10);
 
     delete[] armas;
@@ -145,9 +155,13 @@ void menuArmaduras()
             std::cin >> opcion;
         }
 
-        limpiarPantalla();
-        armaduras[opcion - 1].mostrarDatos();
-        pausa();
+        if (opcion != 10)
+        {
+            limpiarPantalla();
+            armaduras[opcion - 1].mostrarDatos();
+            pausa();
+        }
+
     } while (opcion != 10);
 
     delete[] armaduras;
