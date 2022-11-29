@@ -4,10 +4,10 @@
 #include <string>
 #include <cstdlib>
 
-#include "headers\Menu.h"
-#include "headers\Inicializador.h"
-#include "headers\Funciones.h"
-#include "headers\Personaje.h"
+#include "headers/Menu.h"
+#include "headers/Inicializador.h"
+#include "headers/Funciones.h"
+#include "headers/Personaje.h"
 
 int main()
 {
