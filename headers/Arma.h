@@ -1,16 +1,27 @@
-// En este archivo se define la clase Arma, que representa a una arma de un personaje.
+/**
+ * DnD Character Creator
+ * Diego Antonio Garcia Padilla
+ * A01710777
+ * 02/12/2022
+ */
 
-#ifndef ARMA_H
-#define ARMA_H
+/**
+ * Clase Arma: Clase que representa a las armas del juego 
+ * y hereda de la clase Objeto.
+ */
 
-#include <iostream>
-#include <string>
+#ifndef ARMA_H // Si no esta definido el preprocesador ARMA_H
+#define ARMA_H // Definir el preprocesador ARMA_H
 
-#include "Objeto.h"
+#include <iostream> // Libreria para entrada y salida de datos
+#include <string> // Libreria para manejo de strings
+
+#include "Objeto.h" // Incluir la clase Objeto
 
 class Arma : public Objeto
 {
 private:
+    // Atributos
     std::string tipo = "Arma";
     int daño;
 
@@ -32,9 +43,12 @@ public:
     void mostrarDatos();
 };
 
-// Constructores
-
-// Constructor por defecto
+/**
+ * Constructor por default
+ *
+ * @param
+ * @return Objeto Arma
+ */
 
 Arma::Arma()
 {
@@ -47,7 +61,18 @@ Arma::Arma()
     daño = 10;
 }
 
-// Constructor con parametros
+/**
+ * Constructor con parametros
+ *
+ * @param nombre
+ * @param descripcion
+ * @param peso
+ * @param valor
+ * @param subtipo
+ * @param material
+ * @param daño
+ * @return Objeto Arma
+ */
 
 Arma::Arma(std::string nombre, std::string descripcion, int peso, int valor, std::string subtipo, 
     std::string material, int daño)
@@ -63,6 +88,13 @@ Arma::Arma(std::string nombre, std::string descripcion, int peso, int valor, std
 
 // Getters
 
+/**
+ * Getter del atributo daño
+ *
+ * @param
+ * @return daño
+ */
+
 int Arma::getDaño()
 {
     return daño;
@@ -70,12 +102,26 @@ int Arma::getDaño()
 
 // Setters
 
+/**
+ * Setter del atributo daño
+ *
+ * @param daño
+ * @return
+ */
+
 void Arma::setDaño(int daño)
 {
     this->daño = daño;
 }
 
 // Metodos
+
+/**
+ * Metodo que muestra los datos de la arma
+ *
+ * @param
+ * @return
+ */
 
 void Arma::mostrarDatos()
 {
@@ -89,4 +135,4 @@ void Arma::mostrarDatos()
     std::cout << "Daño: " << daño << std::endl;
 }
 
-#endif
+#endif // Cierre del preprocesador ARMA_H

@@ -1,16 +1,22 @@
-// En este archivo se define la clase Clase, que representa a una clase de personaje.
+/**
+ * DnD Character Creator
+ * Diego Antonio Garcia Padilla
+ * A01710777
+ * 02/12/2022
+ */
 
-#ifndef CLASE_H
-#define CLASE_H
+/** 
+ * Clase Clase: Clase que representa a las clases que puede tener un personaje.
+ */
 
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <sstream>
-#include <vector>
+#ifndef CLASE_H // Si no esta definido el preprocesador CLASE_H
+#define CLASE_H // Definir el preprocesador CLASE_H
 
-#include "Arma.h"
-#include "Armadura.h"
+#include <iostream> // Libreria para entrada y salida de datos
+#include <string> // Libreria para manejo de strings
+
+#include "Arma.h" // Incluir la clase Arma
+#include "Armadura.h" // Incluir la clase Armadura
 
 class Clase
 {
@@ -43,7 +49,12 @@ public:
 
 // Constructores
 
-// Constructor por defecto
+/**
+ * Constructor por default
+ *
+ * @param
+ * @return Objeto Clase
+ */
 
 Clase::Clase()
 {
@@ -53,7 +64,15 @@ Clase::Clase()
     armaduraInicial = Armadura();
 }
 
-// Constructor con parametros
+/**
+ * Constructor con parametros
+ *
+ * @param nombre
+ * @param descripcion
+ * @param armaInicial
+ * @param armaduraInicial
+ * @return Objeto Clase
+ */
 
 Clase::Clase(std::string nombre, std::string descripcion, Arma armaInicial, Armadura armaduraInicial)
 {
@@ -65,20 +84,48 @@ Clase::Clase(std::string nombre, std::string descripcion, Arma armaInicial, Arma
 
 // Getters
 
+/**
+ * Getter del atributo nombre
+ *
+ * @param
+ * @return nombre
+ */
+
 std::string Clase::getNombre()
 {
     return nombre;
 }
+
+/**
+ * Getter del atributo descripcion
+ *
+ * @param
+ * @return descripcion
+ */
 
 std::string Clase::getDescripcion()
 {
     return descripcion;
 }
 
+/**
+ * Getter del atributo armaInicial
+ *
+ * @param
+ * @return armaInicial
+ */
+
 Arma Clase::getArmaInicial()
 {
     return armaInicial;
 }
+
+/**
+ * Getter del atributo armaduraInicial
+ *
+ * @param
+ * @return armaduraInicial
+ */
 
 Armadura Clase::getArmaduraInicial()
 {
@@ -87,20 +134,48 @@ Armadura Clase::getArmaduraInicial()
 
 // Setters
 
+/**
+ * Setter del atributo nombre
+ *
+ * @param nombre
+ * @return
+ */
+
 void Clase::setNombre(std::string nombre)
 {
     this->nombre = nombre;
 }
+
+/**
+ * Setter del atributo descripcion
+ *
+ * @param descripcion
+ * @return
+ */
 
 void Clase::setDescripcion(std::string descripcion)
 {
     this->descripcion = descripcion;
 }
 
+/**
+ * Setter del atributo armaInicial
+ *
+ * @param armaInicial
+ * @return
+ */
+
 void Clase::setArmaInicial(Arma armaInicial)
 {
     this->armaInicial = armaInicial;
 }
+
+/**
+ * Setter del atributo armaduraInicial
+ *
+ * @param armaduraInicial
+ * @return
+ */
 
 void Clase::setArmaduraInicial(Armadura armaduraInicial)
 {
@@ -108,6 +183,13 @@ void Clase::setArmaduraInicial(Armadura armaduraInicial)
 }
 
 // Metodos
+
+/**
+ * Metodo que muestra la clase
+ *
+ * @param
+ * @return
+ */
 
 void Clase::mostrarClase()
 {
@@ -117,6 +199,4 @@ void Clase::mostrarClase()
     std::cout << "Armadura inicial: " << armaduraInicial.getNombre() << std::endl;
 }
 
-// Funciones
-
-#endif
+#endif // Cerrar el preprocesador CLASE_H

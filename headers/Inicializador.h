@@ -1,22 +1,34 @@
-// Este archivo se encuentran las funciones para inicializar las clases y razas, y tambien las funciones para mostrarlas por pantalla. El problema es que al compilar el programa, me da un error en la funcion inicializarRazas() y en la funcion inicializarClases(). El error es el siguiente:
+/**
+ * DnD Character Creator
+ * Diego Antonio Garcia Padilla
+ * A01710777
+ * 02/12/2022
+ */
 
-#ifndef INICIALIZADOR_H
-#define INICIALIZADOR_H
+/* 
+ * En este archivo se encuentran funciones que se utilizan para inicializar
+ * los vectores de objetos.
+ */
 
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <sstream>
-#include <vector>
+#ifndef INICIALIZADOR_H // Si no esta definido el preprocesador INICIALIZADOR_H
+#define INICIALIZADOR_H // Definir el preprocesador INICIALIZADOR_H
 
-#include "Arma.h"
-#include "Armadura.h"
-#include "Raza.h"
-#include "Clase.h"
+#include <iostream> // Libreria para entrada y salida de datos
+#include <fstream> // Libreria para manejo de archivos
+#include <string> // Libreria para manejo de strings
+#include <sstream> // Libreria para manejo de strings
+#include <vector> // Libreria para manejo de vectores
+
+#include "Arma.h" // Incluir la clase Arma
+#include "Armadura.h" // Incluir la clase Armadura
+#include "Raza.h" // Incluir la clase Raza
+#include "Clase.h" // Incluir la clase Clase
 
 // Genero
 
-// Funcion para inicializar a los generos
+/**
+ * Inicializar arreglo de generos
+ */
 
 std::string *inicializarGeneros()
 {
@@ -28,7 +40,13 @@ std::string *inicializarGeneros()
     return generos;
 }
 
-// Funcion para mostrar los generos
+/**
+ * Inicializar arreglo de generos
+ * 
+ * @param generos
+ * @param numGeneros
+ * @return 
+ */
 
 void mostrarGeneros(std::string *generos, int numGeneros)
 {
@@ -39,7 +57,12 @@ void mostrarGeneros(std::string *generos, int numGeneros)
 }
 // Alineamientos
 
-// Funcion para inicializar array de alineamientos
+/**
+ * Inicializar arreglo de alineamientos
+ * 
+ * @param
+ * @return alineamientos
+ */
 
 std::string *inicializarAlineamientos()
 {
@@ -57,9 +80,13 @@ std::string *inicializarAlineamientos()
     return alineamientos;
 }
 
-// Funcion para mostrar array de alineamientos
-
-// Funcion para mostrar las opciones de alineamiento
+/**
+ * Mostrar arreglo de alineamientos
+ * 
+ * @param alineamientos
+ * @param numAlineamientos
+ * @return 
+ */
 
 void mostrarAlineamientos(std::string *alineamientos, int numAlineamientos)
 {
@@ -71,7 +98,12 @@ void mostrarAlineamientos(std::string *alineamientos, int numAlineamientos)
 
 // Arma
 
-// Funcion para inicializar las armas
+/**
+ * Inicializar vector de armas
+ * 
+ * @param
+ * @return armas
+ */
 
 Arma *inicializarArmas()
 {
@@ -118,7 +150,13 @@ Arma *inicializarArmas()
     return armas;
 }
 
-// Funcion para mostrar todas las armas
+/**
+ * Mostrar vector de armas
+ * 
+ * @param armas
+ * @param numArmas
+ * @return 
+ */
 
 void mostrarArmas(Arma *armas, int numArmas)
 {
@@ -130,7 +168,12 @@ void mostrarArmas(Arma *armas, int numArmas)
 
 // Armadura
 
-// Funcion para inicializar los objetos de tipo Armadura
+/**
+ * Inicializar vector de armaduras
+ * 
+ * @param
+ * @return armaduras
+ */
 
 Armadura *inicializarArmaduras()
 {
@@ -177,7 +220,13 @@ Armadura *inicializarArmaduras()
     return armaduras;
 }
 
-// Funcion para mostrar todas las armaduras
+/**
+ * Mostrar vector de armaduras
+ * 
+ * @param armaduras
+ * @param numArmaduras
+ * @return 
+ */
 
 void mostrarArmaduras(Armadura *armaduras, int numArmaduras)
 {
@@ -189,7 +238,12 @@ void mostrarArmaduras(Armadura *armaduras, int numArmaduras)
 
 // Razas
 
-// Funcion para inicializar las razas
+/**
+ * Inicializar vector de razas
+ * 
+ * @param
+ * @return razas
+ */
 
 Raza *inicializarRazas()
 {
@@ -236,7 +290,13 @@ Raza *inicializarRazas()
     return razas;
 }
 
-// Funcion para mostrar las razas
+/**
+ * Mostrar vector de razas
+ * 
+ * @param razas
+ * @param numRazas
+ * @return 
+ */
 
 void mostrarRazas(Raza *razas, int numRazas)
 {
@@ -248,7 +308,12 @@ void mostrarRazas(Raza *razas, int numRazas)
 
 // Clases
 
-// Funcion para inicializar las clases
+/**
+ * Inicializar vector de clases
+ * 
+ * @param
+ * @return clases
+ */
 
 Clase *inicializarClases()
 {
@@ -297,7 +362,13 @@ Clase *inicializarClases()
     return clases;
 }
 
-// Funcion para mostrar todas las clases
+/**
+ * Mostrar vector de clases
+ * 
+ * @param clases
+ * @param numClases
+ * @return 
+ */
 
 void mostrarClases(Clase *clases, int numClases)
 {
@@ -307,4 +378,4 @@ void mostrarClases(Clase *clases, int numClases)
     }
 }
 
-#endif
+#endif // Fin del preprocesador INICIALIZAR_H

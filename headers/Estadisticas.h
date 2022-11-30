@@ -1,16 +1,26 @@
-// En este archivo se define la clase Estadisticas, que representa a las estadisticas de un jugador.
+/**
+ * DnD Character Creator
+ * Diego Antonio Garcia Padilla
+ * A01710777
+ * 02/12/2022
+ */
 
-#ifndef ESTADISTICAS_H
-#define ESTADISTICAS_H
+/**
+ * Clase Estadisticas: Clase que representa a las estadisticas de un personaje.
+ */
 
-#include <iostream>
-#include <string>
-#include <cstdlib>
-#include "Raza.h"
+#ifndef ESTADISTICAS_H // Si no esta definido el preprocesador ESTADISTICAS_H
+#define ESTADISTICAS_H // Definir el preprocesador ESTADISTICAS_H
+
+#include <iostream> // Libreria para entrada y salida de datos
+#include <string> // Libreria para manejo de strings
+
+#include "Raza.h" // Incluir la clase Raza
 
 class Estadisticas
 {
 private:
+    // Atributos
     int fuerza;
     int destreza;
     int constitucion;
@@ -43,6 +53,15 @@ public:
     void mostrarEstadisticas();
 };
 
+// Constructores
+
+/**
+ * Constructor por default
+ *
+ * @param
+ * @return Objeto Estadisticas
+ */
+
 Estadisticas::Estadisticas()
 {
     this->fuerza = rand() % 20 + 1;
@@ -52,6 +71,13 @@ Estadisticas::Estadisticas()
     this->sabiduria = rand() % 20 + 1;
     this->carisma = rand() % 20 + 1;
 }
+
+/**
+ * Constructor con parametros
+ *
+ * @param raza
+ * @return Objeto Estadisticas
+ */
 
 Estadisticas::Estadisticas(Raza raza)
 {
@@ -63,65 +89,162 @@ Estadisticas::Estadisticas(Raza raza)
     this->carisma = raza.getModificadorCarisma() + (rand() % 20 + 1);
 }
 
+// Getters
+
+/**
+ * Getter del atributo fuerza
+ *
+ * @param
+ * @return fuerza
+ */
+
 int Estadisticas::getFuerza()
 {
     return this->fuerza;
 }
+
+/**
+ * Getter del atributo destreza
+ *
+ * @param
+ * @return destreza
+ */
 
 int Estadisticas::getDestreza()
 {
     return this->destreza;
 }
 
+/**
+ * Getter del atributo constitucion
+ *
+ * @param
+ * @return constitucion
+ */
+
 int Estadisticas::getConstitucion()
 {
     return this->constitucion;
 }
+
+/**
+ * Getter del atributo inteligencia
+ *
+ * @param
+ * @return inteligencia
+ */
 
 int Estadisticas::getInteligencia()
 {
     return this->inteligencia;
 }
 
+/**
+ * Getter del atributo sabiduria
+ *
+ * @param
+ * @return sabiduria
+ */
+
 int Estadisticas::getSabiduria()
 {
     return this->sabiduria;
 }
+
+/**
+ * Getter del atributo carisma
+ *
+ * @param
+ * @return carisma
+ */
 
 int Estadisticas::getCarisma()
 {
     return this->carisma;
 }
 
+// Setters
+
+/**
+ * Setter del atributo fuerza
+ *
+ * @param fuerza
+ * @return
+ */
+
 void Estadisticas::setFuerza(int fuerza)
 {
     this->fuerza = fuerza;
 }
+
+/**
+ * Setter del atributo destreza
+ *
+ * @param destreza
+ * @return
+ */
 
 void Estadisticas::setDestreza(int destreza)
 {
     this->destreza = destreza;
 }
 
+/**
+ * Setter del atributo constitucion
+ *
+ * @param constitucion
+ * @return
+ */
+
 void Estadisticas::setConstitucion(int constitucion)
 {
     this->constitucion = constitucion;
 }
+
+/**
+ * Setter del atributo inteligencia
+ *
+ * @param inteligencia
+ * @return
+ */
 
 void Estadisticas::setInteligencia(int inteligencia)
 {
     this->inteligencia = inteligencia;
 }
 
+/**
+ * Setter del atributo sabiduria
+ *
+ * @param sabiduria
+ * @return
+ */
+
 void Estadisticas::setSabiduria(int sabiduria)
 {
     this->sabiduria = sabiduria;
 }
 
+/**
+ * Setter del atributo carisma
+ *
+ * @param carisma
+ * @return
+ */
+
 void Estadisticas::setCarisma(int carisma)
 {
     this->carisma = carisma;
 }
+
+// Metodos
+
+/**
+ * Metodo que muestra las estadisticas de un personaje
+ *
+ * @param
+ * @return
+ */
 
 void Estadisticas::mostrarEstadisticas()
 {
@@ -133,4 +256,4 @@ void Estadisticas::mostrarEstadisticas()
     std::cout << "Carisma: " << this->carisma << std::endl;
 }
 
-#endif
+#endif // Fin del preprocesador ESTADISTICAS_H

@@ -1,21 +1,35 @@
-// En este archivo se definen las funciones que se usan en el menú principal.
+/**
+ * DnD Character Creator
+ * Diego Antonio Garcia Padilla
+ * A01710777
+ * 02/12/2022
+ */
 
-#ifndef MENU_H
-#define MENU_H
+/**
+ * En este archivo se encuentran funciones que se utilizan en el programa.
+ */
 
-#include <iostream>
-#include <string>
+#ifndef MENU_H // Si no esta definido el preprocesador MENU_H
+#define MENU_H // Definir el preprocesador MENU_H
 
-#include "Funciones.h"
-#include "Inicializador.h"
-#include "Raza.h"
-#include "Clase.h"
-#include "Estadisticas.h"
-#include "Personaje.h"
+#include <iostream> // Libreria para entrada y salida de datos
+#include <string> // Libreria para manejo de strings
+
+#include "Funciones.h" // Incluir el archivo Funciones.h
+#include "Inicializador.h" // Incluir el archivo Inicializador.h
+#include "Raza.h" // Incluir la clase Raza
+#include "Clase.h" // Incluir la clase Clase
+#include "Estadisticas.h" // Incluir la clase Estadisticas
+#include "Personaje.h" // Incluir la clase Personaje
 
 // Funciones
 
-// Funcion para mostrar el menú principal
+/**
+ * Funcion para mostrar el menu principal
+ * 
+ * @param 
+ * @return 
+ */
 
 void menuPrincipal()
 {
@@ -28,7 +42,12 @@ void menuPrincipal()
     std::cout << "4. Salir" << std::endl;
 }
 
-// Funcion para mostrar el menu de razas
+/**
+ * Funcion para mostrar el menu de enciclopedia de razas
+ * 
+ * @param 
+ * @return 
+ */
 
 void menuRazas()
 {
@@ -62,7 +81,13 @@ void menuRazas()
     delete[] razas;
 }
 
-// Funcion para mostrar el menu de clases
+/**
+ * Funcion para mostrar el menu de enciclopedia de clases
+ * 
+ * @param 
+ * @return 
+ */
+
 
 void menuClases()
 {
@@ -97,7 +122,13 @@ void menuClases()
     delete[] clases;
 }
 
-// Funcion para mostrar el menu de armas
+/**
+ * Funcion para mostrar el menu de enciclopedia de armas
+ * 
+ * @param 
+ * @return 
+ */
+
 
 void menuArmas()
 {
@@ -132,7 +163,13 @@ void menuArmas()
     delete[] armas;
 }
 
-// Funcion para mostrar el menu de armaduras
+/**
+ * Funcion para mostrar el menu de enciclopedia de armaduras
+ * 
+ * @param 
+ * @return 
+ */
+
 
 void menuArmaduras()
 {
@@ -167,7 +204,13 @@ void menuArmaduras()
     delete[] armaduras;
 }
 
-// Funcion para mostrar el menu de enciclopedia
+/**
+ * Funcion para mostrar el menu de enciclopedia
+ * 
+ * @param 
+ * @return 
+ */
+
 
 void menuEnciclopedia()
 {

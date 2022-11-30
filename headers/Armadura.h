@@ -1,16 +1,27 @@
-// En este archivo se define la clase Armadura, que representa a una armadura de un personaje.
+/**
+ * DnD Character Creator
+ * Diego Antonio Garcia Padilla
+ * A01710777
+ * 02/12/2022
+ */
 
-#ifndef ARMADURA_H
-#define ARMADURA_H
+/** 
+ * Clase Armadura: Clase que representa a las armaduras del juego 
+ * y hereda de la clase Objeto.
+ */
 
-#include <iostream>
-#include <string>
+#ifndef ARMADURA_H // Si no esta definido el preprocesador ARMADURA_H
+#define ARMADURA_H // Definir el preprocesador ARMADURA_H
 
-#include "Objeto.h"
+#include <iostream> // Libreria para entrada y salida de datos
+#include <string> // Libreria para manejo de strings
+
+#include "Objeto.h" // Incluir la clase Objeto
 
 class Armadura : public Objeto
 {
 private:
+    // Atributos
     std::string tipo = "Armadura";
     int defensa;
 
@@ -34,7 +45,12 @@ public:
 
 // Constructores
 
-// Constructor por defecto
+/**
+ * Constructor por default
+ *
+ * @param
+ * @return Objeto Armadura
+ */
 
 Armadura::Armadura()
 {
@@ -47,7 +63,18 @@ Armadura::Armadura()
     defensa = 10;
 }
 
-// Constructor con parametros
+/**
+ * Constructor con parametros
+ *
+ * @param nombre
+ * @param descripcion
+ * @param peso
+ * @param valor
+ * @param subtipo
+ * @param material
+ * @param defensa
+ * @return Objeto Armadura
+ */
 
 Armadura::Armadura(std::string nombre, std::string descripcion, int peso, int valor, 
     std::string subtipo, std::string material, int defensa)
@@ -63,6 +90,13 @@ Armadura::Armadura(std::string nombre, std::string descripcion, int peso, int va
 
 // Getters
 
+/**
+ * Getter del atributo defensa
+ *
+ * @param
+ * @return defensa
+ */
+
 int Armadura::getDefensa()
 {
     return defensa;
@@ -70,12 +104,26 @@ int Armadura::getDefensa()
 
 // Setters
 
+/**
+ * Setter del atributo defensa
+ *
+ * @param defensa
+ * @return
+ */
+
 void Armadura::setDefensa(int defensa)
 {
     this->defensa = defensa;
 }
 
 // Metodos
+
+/**
+ * Metodo mostrarDatos: Muestra los datos de la armadura
+ *
+ * @param
+ * @return
+ */
 
 void Armadura::mostrarDatos()
 {
@@ -88,4 +136,4 @@ void Armadura::mostrarDatos()
     std::cout << "Defensa: " << defensa << std::endl;
 }
 
-#endif
+#endif // Cierre del preprocesador ARMADURA_H
