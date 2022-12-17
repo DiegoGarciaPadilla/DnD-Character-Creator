@@ -5,31 +5,30 @@
  * 02/12/2022
  */
 
-/** 
- * Clase Armadura: Clase que representa a las armaduras del juego 
- * y hereda de la clase Objeto.
+/**
+ * @brief This class is the base class for all the armors in the game.
  */
 
-#ifndef ARMADURA_H // Si no esta definido el preprocesador ARMADURA_H
-#define ARMADURA_H // Definir el preprocesador ARMADURA_H
+#ifndef ARMADURA_H // If the ARMADURA_H preprocessor is not defined
+#define ARMADURA_H // Define the ARMADURA_H preprocessor
 
-#include <iostream> // Libreria para entrada y salida de datos
-#include <string> // Libreria para manejo de strings
+#include <iostream> // Library for input and output
+#include <string>   // Library for strings
 
-#include "Objeto.h" // Incluir la clase Objeto
+#include "Objeto.h" // Include the object class
 
 class Armadura : public Objeto
 {
 private:
-    // Atributos
+    // Attributes
     std::string tipo = "Armadura";
     int defensa;
 
 public:
-    // Constructores
+    // Constructors
     Armadura();
     Armadura(std::string nombre, std::string descripcion, int peso, int valor,
-        std::string subtipo, std::string material, int defensa);
+             std::string subtipo, std::string material, int defensa);
 
     // Getters
     std::string getTipo();
@@ -39,14 +38,14 @@ public:
     void setTipo(std::string tipo);
     void setDefensa(int defensa);
 
-    // Metodos
+    // Methods
     void mostrarDatos();
 };
 
-// Constructores
+// Constructors
 
 /**
- * Constructor por default
+ * @brief Construct a default Armadura:: Armadura object
  *
  * @param
  * @return Objeto Armadura
@@ -64,7 +63,7 @@ Armadura::Armadura()
 }
 
 /**
- * Constructor con parametros
+ * @brief Construct a new Armadura:: Armadura object
  *
  * @param nombre
  * @param descripcion
@@ -76,8 +75,8 @@ Armadura::Armadura()
  * @return Objeto Armadura
  */
 
-Armadura::Armadura(std::string nombre, std::string descripcion, int peso, int valor, 
-    std::string subtipo, std::string material, int defensa)
+Armadura::Armadura(std::string nombre, std::string descripcion, int peso, int valor,
+                   std::string subtipo, std::string material, int defensa)
 {
     this->nombre = nombre;
     this->descripcion = descripcion;
@@ -91,7 +90,7 @@ Armadura::Armadura(std::string nombre, std::string descripcion, int peso, int va
 // Getters
 
 /**
- * Getter del atributo defensa
+ * @brief Getter for the attribute defensa
  *
  * @param
  * @return defensa
@@ -105,7 +104,7 @@ int Armadura::getDefensa()
 // Setters
 
 /**
- * Setter del atributo defensa
+ * @brief Setter for the attribute defensa
  *
  * @param defensa
  * @return
@@ -116,10 +115,10 @@ void Armadura::setDefensa(int defensa)
     this->defensa = defensa;
 }
 
-// Metodos
+// Methods
 
 /**
- * Metodo mostrarDatos: Muestra los datos de la armadura
+ * @brief Method to show the object's data
  *
  * @param
  * @return
@@ -136,4 +135,4 @@ void Armadura::mostrarDatos()
     std::cout << "Defensa: " << defensa << std::endl;
 }
 
-#endif // Cierre del preprocesador ARMADURA_H
+#endif // End of the ARMADURA_H preprocessor

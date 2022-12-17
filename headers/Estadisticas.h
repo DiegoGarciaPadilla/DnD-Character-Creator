@@ -6,21 +6,22 @@
  */
 
 /**
- * Clase Estadisticas: Clase que representa a las estadisticas de un personaje.
+ * @brief This class represents the statistics of a character.
  */
 
-#ifndef ESTADISTICAS_H // Si no esta definido el preprocesador ESTADISTICAS_H
-#define ESTADISTICAS_H // Definir el preprocesador ESTADISTICAS_H
+#ifndef ESTADISTICAS_H // If the ESTADISTICAS_H preprocessor is not defined
+#define ESTADISTICAS_H // Define the ESTADISTICAS_H preprocessor
 
-#include <iostream> // Libreria para entrada y salida de datos
-#include <string> // Libreria para manejo de strings
+#include <iostream> // Library for input and output
+#include <string>   // Library for strings
 
-#include "Raza.h" // Incluir la clase Raza
+#include "Funciones.h" // Include the functions file
+#include "Raza.h"      // Include the race class
 
 class Estadisticas
 {
 private:
-    // Atributos
+    // Attributes
     int fuerza;
     int destreza;
     int constitucion;
@@ -29,7 +30,7 @@ private:
     int carisma;
 
 public:
-    // Constructores
+    // Constructors
     Estadisticas();
     Estadisticas(Raza raza);
 
@@ -49,50 +50,50 @@ public:
     void setSabiduria(int sabiduria);
     void setCarisma(int carisma);
 
-    // Metodos
+    // Methods
     void mostrarEstadisticas();
 };
 
-// Constructores
+// Constructors
 
 /**
- * Constructor por default
+ * @brief Construct a new Estadisticas:: Estadisticas object
  *
  * @param
- * @return Objeto Estadisticas
+ * @return Estadisticas object
  */
 
 Estadisticas::Estadisticas()
 {
-    this->fuerza = rand() % 20 + 1;
-    this->destreza = rand() % 20 + 1;
-    this->constitucion = rand() % 20 + 1;
-    this->inteligencia = rand() % 20 + 1;
-    this->sabiduria = rand() % 20 + 1;
-    this->carisma = rand() % 20 + 1;
+    this->fuerza = tirarDado();
+    this->destreza = tirarDado();
+    this->constitucion = tirarDado();
+    this->inteligencia = tirarDado();
+    this->sabiduria = tirarDado();
+    this->carisma = tirarDado();
 }
 
 /**
- * Constructor con parametros
+ * @brief Construct a new Estadisticas:: Estadisticas object
  *
  * @param raza
- * @return Objeto Estadisticas
+ * @return Estadisticas object
  */
 
 Estadisticas::Estadisticas(Raza raza)
 {
-    this->fuerza = raza.getModificadorFuerza() + (rand() % 20 + 1);
-    this->destreza = raza.getModificadorDestreza() + (rand() % 20 + 1);
-    this->constitucion = raza.getModificadorConstitucion() + (rand() % 20 + 1);
-    this->inteligencia = raza.getModificadorInteligencia() + (rand() % 20 + 1);
-    this->sabiduria = raza.getModificadorSabiduria() + (rand() % 20 + 1);
-    this->carisma = raza.getModificadorCarisma() + (rand() % 20 + 1);
+    this->fuerza = raza.getModificadorFuerza() + tirarDado();
+    this->destreza = raza.getModificadorDestreza() + tirarDado();
+    this->constitucion = raza.getModificadorConstitucion() + tirarDado();
+    this->inteligencia = raza.getModificadorInteligencia() + tirarDado();
+    this->sabiduria = raza.getModificadorSabiduria() + tirarDado();
+    this->carisma = raza.getModificadorCarisma() + tirarDado();
 }
 
 // Getters
 
 /**
- * Getter del atributo fuerza
+ * @brief Getter for the attribute fuerza
  *
  * @param
  * @return fuerza
@@ -104,7 +105,7 @@ int Estadisticas::getFuerza()
 }
 
 /**
- * Getter del atributo destreza
+ * @brief Getter for the attribute destreza
  *
  * @param
  * @return destreza
@@ -116,7 +117,7 @@ int Estadisticas::getDestreza()
 }
 
 /**
- * Getter del atributo constitucion
+ * @brief Getter for the attribute constitucion
  *
  * @param
  * @return constitucion
@@ -128,7 +129,7 @@ int Estadisticas::getConstitucion()
 }
 
 /**
- * Getter del atributo inteligencia
+ * @brief Getter for the attribute inteligencia
  *
  * @param
  * @return inteligencia
@@ -140,7 +141,7 @@ int Estadisticas::getInteligencia()
 }
 
 /**
- * Getter del atributo sabiduria
+ * @brief Getter for the attribute sabiduria
  *
  * @param
  * @return sabiduria
@@ -152,7 +153,7 @@ int Estadisticas::getSabiduria()
 }
 
 /**
- * Getter del atributo carisma
+ * @brief Getter for the attribute carisma
  *
  * @param
  * @return carisma
@@ -166,7 +167,7 @@ int Estadisticas::getCarisma()
 // Setters
 
 /**
- * Setter del atributo fuerza
+ * @brief Setter for the attribute fuerza
  *
  * @param fuerza
  * @return
@@ -178,7 +179,7 @@ void Estadisticas::setFuerza(int fuerza)
 }
 
 /**
- * Setter del atributo destreza
+ * @brief Setter for the attribute destreza
  *
  * @param destreza
  * @return
@@ -190,7 +191,7 @@ void Estadisticas::setDestreza(int destreza)
 }
 
 /**
- * Setter del atributo constitucion
+ * @brief Setter for the attribute constitucion
  *
  * @param constitucion
  * @return
@@ -202,7 +203,7 @@ void Estadisticas::setConstitucion(int constitucion)
 }
 
 /**
- * Setter del atributo inteligencia
+ * @brief Setter for the attribute inteligencia
  *
  * @param inteligencia
  * @return
@@ -214,7 +215,7 @@ void Estadisticas::setInteligencia(int inteligencia)
 }
 
 /**
- * Setter del atributo sabiduria
+ * @brief Setter for the attribute sabiduria
  *
  * @param sabiduria
  * @return
@@ -226,7 +227,7 @@ void Estadisticas::setSabiduria(int sabiduria)
 }
 
 /**
- * Setter del atributo carisma
+ * @brief Setter for the attribute carisma
  *
  * @param carisma
  * @return
@@ -237,10 +238,10 @@ void Estadisticas::setCarisma(int carisma)
     this->carisma = carisma;
 }
 
-// Metodos
+// Methods
 
 /**
- * Metodo que muestra las estadisticas de un personaje
+ * @brief Method to show the statistics
  *
  * @param
  * @return
@@ -256,4 +257,4 @@ void Estadisticas::mostrarEstadisticas()
     std::cout << "Carisma: " << this->carisma << std::endl;
 }
 
-#endif // Fin del preprocesador ESTADISTICAS_H
+#endif // End of the ESTADISTICAS_H preprocessor

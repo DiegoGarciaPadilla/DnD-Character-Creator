@@ -6,29 +6,30 @@
  */
 
 /**
- * En este archivo se encuentran funciones que se utilizan en el programa.
+ * @brief This file contains the menu functions.
+ *
  */
 
-#ifndef MENU_H // Si no esta definido el preprocesador MENU_H
-#define MENU_H // Definir el preprocesador MENU_H
+#ifndef MENU_H // If the preprocessor MENU_H is not defined
+#define MENU_H // Define the preprocessor MENU_H
 
-#include <iostream> // Libreria para entrada y salida de datos
-#include <string> // Libreria para manejo de strings
+#include <iostream> // Library for input and output
+#include <string>   // Library for strings
 
-#include "Funciones.h" // Incluir el archivo Funciones.h
-#include "Inicializador.h" // Incluir el archivo Inicializador.h
-#include "Raza.h" // Incluir la clase Raza
-#include "Clase.h" // Incluir la clase Clase
-#include "Estadisticas.h" // Incluir la clase Estadisticas
-#include "Personaje.h" // Incluir la clase Personaje
+#include "Funciones.h"     // Include the functions file
+#include "Inicializador.h" // Include the Initializer file
+#include "Raza.h"          // Include the race class
+#include "Clase.h"         // Include the class class
+#include "Estadisticas.h"  // Include the statistics class
+#include "Personaje.h"     // Include the character class
 
-// Funciones
+// Functions
 
 /**
- * Funcion para mostrar el menu principal
+ * @brief Function to show the main menu
  * 
- * @param 
- * @return 
+ * @param
+ * @return
  */
 
 void menuPrincipal()
@@ -43,10 +44,10 @@ void menuPrincipal()
 }
 
 /**
- * Funcion para mostrar el menu de enciclopedia de razas
+ * @brief Function to show the race encyclopedia menu
  * 
- * @param 
- * @return 
+ * @param
+ * @return
  */
 
 void menuRazas()
@@ -70,7 +71,8 @@ void menuRazas()
             std::cin >> opcion;
         }
 
-        if (opcion != 10){
+        if (opcion != 10)
+        {
             limpiarPantalla();
             razas[opcion - 1].mostrarRaza();
             pausa();
@@ -82,12 +84,11 @@ void menuRazas()
 }
 
 /**
- * Funcion para mostrar el menu de enciclopedia de clases
+ * @brief Function to show the class encyclopedia menu
  * 
- * @param 
- * @return 
+ * @param
+ * @return
  */
-
 
 void menuClases()
 {
@@ -123,12 +124,11 @@ void menuClases()
 }
 
 /**
- * Funcion para mostrar el menu de enciclopedia de armas
+ * @brief Function to show the statistics encyclopedia menu
  * 
- * @param 
- * @return 
+ * @param
+ * @return
  */
-
 
 void menuArmas()
 {
@@ -164,12 +164,11 @@ void menuArmas()
 }
 
 /**
- * Funcion para mostrar el menu de enciclopedia de armaduras
+ * @brief Function to show the armor encyclopedia menu
  * 
- * @param 
- * @return 
+ * @param
+ * @return
  */
-
 
 void menuArmaduras()
 {
@@ -205,12 +204,11 @@ void menuArmaduras()
 }
 
 /**
- * Funcion para mostrar el menu de enciclopedia
+ * @brief Function to show the encyclopedia menu
  * 
- * @param 
- * @return 
+ * @param
+ * @return
  */
-
 
 void menuEnciclopedia()
 {
@@ -254,4 +252,4 @@ void menuEnciclopedia()
     } while (opcion != 5);
 }
 
-#endif
+#endif // End of the MENU_H preprocessor

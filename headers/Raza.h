@@ -5,21 +5,21 @@
  * 02/12/2022
  */
 
-/*
- * En este archivo se encuentran funciones que se utilizan para inicializar
- * los vectores de objetos.
+/**
+ * @brief This class represents the race of a character.
+ *
  */
 
-#ifndef RAZA_H // Si no esta definido el preprocesador RAZA_H
-#define RAZA_H // Definir el preprocesador RAZA_H
+#ifndef RAZA_H // If the preprocessor RAZA_H is not defined
+#define RAZA_H // Define the preprocessor RAZA_H
 
-#include <iostream> // Libreria para entrada y salida de datos
-#include <string> // Libreria para manejo de strings
+#include <iostream> // Library for input and output
+#include <string>   // Library for strings
 
 class Raza
 {
 private:
-    // Atributos
+    // Attributes
     std::string nombre;
     std::string descripcion;
     int modificadorFuerza;
@@ -30,7 +30,7 @@ private:
     int modificadorCarisma;
 
 public:
-    // Constructores
+    // Constructors
     Raza();
     Raza(std::string nombre, std::string descripcion, int modificadorFuerza,
          int modificadorDestreza, int modificadorConstitucion, int modificadorInteligencia,
@@ -56,17 +56,17 @@ public:
     void setModificadorSabiduria(int modificadorSabiduria);
     void setModificadorCarisma(int modificadorCarisma);
 
-    // Metodos
+    // Methods
     void mostrarRaza();
 };
 
-// Constructor
+// Constructors
 
 /**
- * Constructor de la clase Raza
- * 
+ * @brief Construct a default Raza::Raza object
+ *
  * @param
- * @return
+ * @return Raza object
  */
 
 Raza::Raza()
@@ -82,8 +82,8 @@ Raza::Raza()
 }
 
 /**
- * Constructor de la clase Raza
- * 
+ * @brief Construct a new Raza::Raza object
+ *
  * @param nombre
  * @param descripcion
  * @param modificadorFuerza
@@ -92,12 +92,12 @@ Raza::Raza()
  * @param modificadorInteligencia
  * @param modificadorSabiduria
  * @param modificadorCarisma
- * @return
+ * @return Raza object
  */
 
-Raza::Raza(std::string nombre, std::string descripcion, int modificadorFuerza, 
-int modificadorDestreza, int modificadorConstitucion, int modificadorInteligencia, 
-int modificadorSabiduria, int modificadorCarisma)
+Raza::Raza(std::string nombre, std::string descripcion, int modificadorFuerza,
+           int modificadorDestreza, int modificadorConstitucion, int modificadorInteligencia,
+           int modificadorSabiduria, int modificadorCarisma)
 {
     this->nombre = nombre;
     this->descripcion = descripcion;
@@ -112,8 +112,8 @@ int modificadorSabiduria, int modificadorCarisma)
 // Getters
 
 /**
- * Getter de la clase Raza
- * 
+ * @brief Getter for the attribute nombre
+ *
  * @param
  * @return nombre
  */
@@ -124,8 +124,8 @@ std::string Raza::getNombre()
 }
 
 /**
- * Getter de la clase Raza
- * 
+ * @brief Getter for the attribute descripcion
+ *
  * @param
  * @return descripcion
  */
@@ -136,8 +136,8 @@ std::string Raza::getDescripcion()
 }
 
 /**
- * Getter de la clase Raza
- * 
+ * @brief Getter for the attribute modificadorFuerza
+ *
  * @param
  * @return modificadorFuerza
  */
@@ -148,8 +148,8 @@ int Raza::getModificadorFuerza()
 }
 
 /**
- * Getter de la clase Raza
- * 
+ * @brief Getter for the attribute modificadorDestreza
+ *
  * @param
  * @return modificadorDestreza
  */
@@ -160,8 +160,8 @@ int Raza::getModificadorDestreza()
 }
 
 /**
- * Getter de la clase Raza
- * 
+ * @brief Getter for the attribute modificadorConstitucion
+ *
  * @param
  * @return modificadorConstitucion
  */
@@ -172,8 +172,8 @@ int Raza::getModificadorConstitucion()
 }
 
 /**
- * Getter de la clase Raza
- * 
+ * @brief Getter for the attribute modificadorInteligencia
+ *
  * @param
  * @return modificadorInteligencia
  */
@@ -184,8 +184,8 @@ int Raza::getModificadorInteligencia()
 }
 
 /**
- * Getter de la clase Raza
- * 
+ * @brief Getter for the attribute modificadorSabiduria
+ *
  * @param
  * @return modificadorSabiduria
  */
@@ -196,8 +196,8 @@ int Raza::getModificadorSabiduria()
 }
 
 /**
- * Getter de la clase Raza
- * 
+ * @brief Getter for the attribute modificadorCarisma
+ *
  * @param
  * @return modificadorCarisma
  */
@@ -210,8 +210,8 @@ int Raza::getModificadorCarisma()
 // Setters
 
 /**
- * Setter de la clase Raza
- * 
+ * @brief Setter for the attribute nombre
+ *
  * @param nombre
  * @return
  */
@@ -222,8 +222,8 @@ void Raza::setNombre(std::string nombre)
 }
 
 /**
- * Setter de la clase Raza
- * 
+ * @brief Setter for the attribute descripcion
+ *
  * @param descripcion
  * @return
  */
@@ -234,8 +234,8 @@ void Raza::setDescripcion(std::string descripcion)
 }
 
 /**
- * Setter de la clase Raza
- * 
+ * @brief Setter for the attribute modificadorFuerza
+ *
  * @param modificadorFuerza
  * @return
  */
@@ -246,8 +246,8 @@ void Raza::setModificadorFuerza(int modificadorFuerza)
 }
 
 /**
- * Setter de la clase Raza
- * 
+ * @brief Setter for the attribute modificadorDestreza
+ *
  * @param modificadorDestreza
  * @return
  */
@@ -258,8 +258,8 @@ void Raza::setModificadorDestreza(int modificadorDestreza)
 }
 
 /**
- * Setter de la clase Raza
- * 
+ * @brief Setter for the attribute modificadorConstitucion
+ *
  * @param modificadorConstitucion
  * @return
  */
@@ -270,8 +270,8 @@ void Raza::setModificadorConstitucion(int modificadorConstitucion)
 }
 
 /**
- * Setter de la clase Raza
- * 
+ * @brief Setter for the attribute modificadorInteligencia
+ *
  * @param modificadorInteligencia
  * @return
  */
@@ -282,8 +282,8 @@ void Raza::setModificadorInteligencia(int modificadorInteligencia)
 }
 
 /**
- * Setter de la clase Raza
- * 
+ * @brief Setter for the attribute modificadorSabiduria
+ *
  * @param modificadorSabiduria
  * @return
  */
@@ -294,8 +294,8 @@ void Raza::setModificadorSabiduria(int modificadorSabiduria)
 }
 
 /**
- * Setter de la clase Raza
- * 
+ * @brief Setter for the attribute modificadorCarisma
+ *
  * @param modificadorCarisma
  * @return
  */
@@ -305,11 +305,11 @@ void Raza::setModificadorCarisma(int modificadorCarisma)
     this->modificadorCarisma = modificadorCarisma;
 }
 
-// Metodos
+// Methods
 
 /**
- * Muestra por pantalla los datos de la clase Raza
- * 
+ * @brief Method to show the attributes of the class
+ *
  * @param
  * @return
  */
@@ -326,4 +326,4 @@ void Raza::mostrarRaza()
     std::cout << "Modificador de Carisma: " << this->modificadorCarisma << std::endl;
 }
 
-#endif // Fin del preprocesador RAZA_H
+#endif // End of RAZA_H preprocessor

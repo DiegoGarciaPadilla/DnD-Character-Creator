@@ -5,31 +5,33 @@
  * 02/12/2022
  */
 
-/** 
- * Clase Clase: Clase que representa a las clases que puede tener un personaje.
+/**
+ * @brief This class represents the different classes that a character can have.
  */
 
-#ifndef CLASE_H // Si no esta definido el preprocesador CLASE_H
-#define CLASE_H // Definir el preprocesador CLASE_H
+#ifndef CLASE_H // If the CLASE_H preprocessor is not defined
+#define CLASE_H // Define the CLASE_H preprocessor
 
-#include <iostream> // Libreria para entrada y salida de datos
-#include <string> // Libreria para manejo de strings
+#include <iostream> // Library for input and output
+#include <string>   // Library for strings
 
-#include "Arma.h" // Incluir la clase Arma
-#include "Armadura.h" // Incluir la clase Armadura
+#include "Arma.h"     // Include the weapon class
+#include "Armadura.h" // Include the armor class
 
 class Clase
 {
 private:
+    // Attributes
     std::string nombre;
     std::string descripcion;
     Arma armaInicial;
     Armadura armaduraInicial;
+
 public:
-    // Constructores
+    // Constructors
     Clase();
-    Clase(std::string nombre, std::string descripcion, Arma armaInicial, 
-        Armadura armaduraInicial);
+    Clase(std::string nombre, std::string descripcion, Arma armaInicial,
+          Armadura armaduraInicial);
 
     // Getters
     std::string getNombre();
@@ -43,17 +45,17 @@ public:
     void setArmaInicial(Arma armaInicial);
     void setArmaduraInicial(Armadura armaduraInicial);
 
-    // Metodos
+    // Methods
     void mostrarClase();
 };
 
-// Constructores
+// Constructors
 
 /**
- * Constructor por default
+ * @brief Construct a default Clase:: Clase object
  *
  * @param
- * @return Objeto Clase
+ * @return Clase object
  */
 
 Clase::Clase()
@@ -65,13 +67,13 @@ Clase::Clase()
 }
 
 /**
- * Constructor con parametros
+ * @brief Construct a new Clase:: Clase object
  *
  * @param nombre
  * @param descripcion
  * @param armaInicial
  * @param armaduraInicial
- * @return Objeto Clase
+ * @return Clase object
  */
 
 Clase::Clase(std::string nombre, std::string descripcion, Arma armaInicial, Armadura armaduraInicial)
@@ -85,7 +87,7 @@ Clase::Clase(std::string nombre, std::string descripcion, Arma armaInicial, Arma
 // Getters
 
 /**
- * Getter del atributo nombre
+ * @brief Getter for the attribute nombre
  *
  * @param
  * @return nombre
@@ -97,7 +99,7 @@ std::string Clase::getNombre()
 }
 
 /**
- * Getter del atributo descripcion
+ * @brief Getter for the attribute descripcion
  *
  * @param
  * @return descripcion
@@ -109,7 +111,7 @@ std::string Clase::getDescripcion()
 }
 
 /**
- * Getter del atributo armaInicial
+ * @brief Getter for the attribute armaInicial
  *
  * @param
  * @return armaInicial
@@ -121,7 +123,7 @@ Arma Clase::getArmaInicial()
 }
 
 /**
- * Getter del atributo armaduraInicial
+ * @brief Getter for the attribute armaduraInicial
  *
  * @param
  * @return armaduraInicial
@@ -135,7 +137,7 @@ Armadura Clase::getArmaduraInicial()
 // Setters
 
 /**
- * Setter del atributo nombre
+ * @brief Setter for the attribute nombre
  *
  * @param nombre
  * @return
@@ -147,7 +149,7 @@ void Clase::setNombre(std::string nombre)
 }
 
 /**
- * Setter del atributo descripcion
+ * @brief Setter for the attribute descripcion
  *
  * @param descripcion
  * @return
@@ -159,7 +161,7 @@ void Clase::setDescripcion(std::string descripcion)
 }
 
 /**
- * Setter del atributo armaInicial
+ * @brief Setter for the attribute armaInicial
  *
  * @param armaInicial
  * @return
@@ -171,7 +173,7 @@ void Clase::setArmaInicial(Arma armaInicial)
 }
 
 /**
- * Setter del atributo armaduraInicial
+ * Setter for the attribute armaduraInicial
  *
  * @param armaduraInicial
  * @return
@@ -182,10 +184,10 @@ void Clase::setArmaduraInicial(Armadura armaduraInicial)
     this->armaduraInicial = armaduraInicial;
 }
 
-// Metodos
+// Methods
 
 /**
- * Metodo que muestra la clase
+ * @brief This method prints the class information
  *
  * @param
  * @return
@@ -199,4 +201,4 @@ void Clase::mostrarClase()
     std::cout << "Armadura inicial: " << armaduraInicial.getNombre() << std::endl;
 }
 
-#endif // Cerrar el preprocesador CLASE_H
+#endif // End of the CLASE_H preprocessor

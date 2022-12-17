@@ -6,26 +6,27 @@
  */
 
 /**
- * En este archivo se encuentran funciones que se utilizan en el programa.
+ * @brief This class represents the player character.
+ *
  */
 
-#ifndef PERSONAJE_H // Si no esta definido el preprocesador PERSONAJE_H
-#define PERSONAJE_H // Definir el preprocesador PERSONAJE_H
+#ifndef PERSONAJE_H // If the preprocessor PERSONAJE_H is not defined
+#define PERSONAJE_H // Define the preprocessor PERSONAJE_H
 
-#include <iostream> // Libreria para entrada y salida de datos
-#include <string> // Libreria para manejo de strings
+#include <iostream> // Library for input and output
+#include <string>   // Library for strings
 
-#include "Raza.h" // Incluir la clase Raza
-#include "Clase.h" // Incluir la clase Clase
-#include "Estadisticas.h" // Incluir la clase Estadisticas
-#include "Arma.h" // Incluir la clase Arma
-#include "Armadura.h" // Incluir la clase Armadura
-#include "Inicializador.h" // Incluir la clase Inicializador
+#include "Raza.h"          // Include races class
+#include "Clase.h"         // Include classes class
+#include "Estadisticas.h"  // Include statistics class
+#include "Arma.h"          // Include weapons class
+#include "Armadura.h"      // Include armor class
+#include "Inicializador.h" // Include initializer class
 
 class Personaje
 {
 private:
-    // Atributos
+    // Attributes
     std::string nombre;
     std::string genero;
     int edad;
@@ -37,10 +38,10 @@ private:
     Armadura armadura;
 
 public:
-    // Constructores
+    // Constructors
     Personaje();
-    Personaje(std::string nombre, std::string genero, int edad, std::string alineamiento, 
-        Clase clase, Raza raza, Estadisticas estadisticas, Arma arma, Armadura armadura);
+    Personaje(std::string nombre, std::string genero, int edad, std::string alineamiento,
+              Clase clase, Raza raza, Estadisticas estadisticas, Arma arma, Armadura armadura);
 
     // Getters
     std::string getNombre();
@@ -64,21 +65,23 @@ public:
     void setArma(Arma arma);
     void setArmadura(Armadura armadura);
 
-    // Metodos
+    // Methods
     void mostrarPersonaje();
     void mostrarRaza();
-    void definirRaza(Raza *razas,int opcion);
+    void definirRaza(Raza *razas, int opcion);
     void mostrarEstadisticas();
     void definirEstadisticas(Raza raza);
     void mostrarClase();
     void definirClase(Clase *clases, int opcion);
 };
 
+// Constructors
+
 /**
- * Constructor por default
- * 
+ * @brief Construct a default Personaje:: Personaje object
+ *
  * @param
- * @return
+ * @return Personaje object
  */
 
 Personaje::Personaje()
@@ -95,8 +98,8 @@ Personaje::Personaje()
 }
 
 /**
- * Constructor con parametros
- * 
+ * @brief Construct a new Personaje:: Personaje object
+ *
  * @param nombre
  * @param genero
  * @param edad
@@ -106,11 +109,11 @@ Personaje::Personaje()
  * @param estadisticas
  * @param arma
  * @param armadura
- * @return
+ * @return Personaje object
  */
 
-Personaje::Personaje(std::string nombre, std::string genero, int edad, std::string alineamiento, 
-    Clase clase, Raza raza, Estadisticas estadisticas, Arma arma, Armadura armadura)
+Personaje::Personaje(std::string nombre, std::string genero, int edad, std::string alineamiento,
+                     Clase clase, Raza raza, Estadisticas estadisticas, Arma arma, Armadura armadura)
 {
     this->nombre = nombre;
     this->genero = genero;
@@ -126,8 +129,8 @@ Personaje::Personaje(std::string nombre, std::string genero, int edad, std::stri
 // Getters
 
 /**
- * Obtener el nombre del personaje
- * 
+ * @brief Getter for the attribute nombre
+ *
  * @param
  * @return nombre
  */
@@ -138,8 +141,8 @@ std::string Personaje::getNombre()
 }
 
 /**
- * Obtener el genero del personaje
- * 
+ * @brief Getter for the attribute genero
+ *
  * @param
  * @return genero
  */
@@ -150,8 +153,8 @@ std::string Personaje::getGenero()
 }
 
 /**
- * Obtener la edad del personaje
- * 
+ * @brief Getter for the attribute edad
+ *
  * @param
  * @return edad
  */
@@ -162,8 +165,8 @@ int Personaje::getEdad()
 }
 
 /**
- * Obtener el alineamiento del personaje
- * 
+ * @brief Getter for the attribute alineamiento
+ *
  * @param
  * @return alineamiento
  */
@@ -174,8 +177,8 @@ std::string Personaje::getAlineamiento()
 }
 
 /**
- * Obtener la raza del personaje
- * 
+ * @brief Getter for the attribute raza
+ *
  * @param
  * @return raza
  */
@@ -186,10 +189,10 @@ Raza Personaje::getRaza()
 }
 
 /**
- * Obtener la clase del personaje
- * 
+ * @brief Getter for the attribute estadisticas
+ *
  * @param
- * @return clase
+ * @return estadisticas
  */
 
 Estadisticas Personaje::getEstadisticas()
@@ -198,10 +201,10 @@ Estadisticas Personaje::getEstadisticas()
 }
 
 /**
- * Obtener las estadisticas del personaje
- * 
+ * @brief Getter for the attribute arma
+ *
  * @param
- * @return estadisticas
+ * @return arma
  */
 
 Arma Personaje::getArma()
@@ -210,10 +213,10 @@ Arma Personaje::getArma()
 }
 
 /**
- * Obtener la arma del personaje
- * 
+ * @brief Getter for the attribute armadura
+ *
  * @param
- * @return arma
+ * @return armadura
  */
 
 Armadura Personaje::getArmadura()
@@ -224,8 +227,8 @@ Armadura Personaje::getArmadura()
 // Setters
 
 /**
- * Establecer el nombre del personaje
- * 
+ * @brief Setter for the attribute nombre
+ *
  * @param nombre
  * @return
  */
@@ -236,8 +239,8 @@ void Personaje::setNombre(std::string nombre)
 }
 
 /**
- * Establecer el genero del personaje
- * 
+ * @brief Setter for the attribute genero
+ *
  * @param genero
  * @return
  */
@@ -248,8 +251,8 @@ void Personaje::setGenero(std::string genero)
 }
 
 /**
- * Establecer la edad del personaje
- * 
+ * @brief Setter for the attribute edad
+ *
  * @param edad
  * @return
  */
@@ -260,8 +263,8 @@ void Personaje::setEdad(int edad)
 }
 
 /**
- * Establecer el alineamiento del personaje
- * 
+ * @brief Setter for the attribute alineamiento
+ *
  * @param alineamiento
  * @return
  */
@@ -272,8 +275,8 @@ void Personaje::setAlineamiento(std::string alineamiento)
 }
 
 /**
- * Establecer la raza del personaje
- * 
+ * @brief Setter for the attribute raza
+ *
  * @param raza
  * @return
  */
@@ -284,9 +287,9 @@ void Personaje::setRaza(Raza raza)
 }
 
 /**
- * Establecer la clase del personaje
- * 
- * @param clase
+ * @brief Setter for the attribute estadisticas
+ *
+ * @param estadisticas
  * @return
  */
 
@@ -296,9 +299,9 @@ void Personaje::setEstadisticas(Estadisticas estadisticas)
 }
 
 /**
- * Establecer las estadisticas del personaje
- * 
- * @param estadisticas
+ * @brief Setter for the attribute arma
+ *
+ * @param arma
  * @return
  */
 
@@ -308,9 +311,9 @@ void Personaje::setArma(Arma arma)
 }
 
 /**
- * Establecer la arma del personaje
- * 
- * @param arma
+ * @brief Setter for the attribute armadura
+ *
+ * @param armadura
  * @return
  */
 
@@ -319,11 +322,11 @@ void Personaje::setArmadura(Armadura armadura)
     this->armadura = armadura;
 }
 
-// Metodos
+// Methods
 
 /**
- * Mostrar el personaje
- * 
+ * @brief Method to show the character's data
+ *
  * @param
  * @return
  */
@@ -350,8 +353,9 @@ void Personaje::mostrarPersonaje()
 }
 
 /**
- * Mostrar las estadisticas del personaje
- * 
+ * @brief Method to show the character's race
+ *
+ * @param
  * @param
  * @return
  */
@@ -362,8 +366,8 @@ void Personaje::mostrarRaza()
 }
 
 /**
- * Mostrar las estadisticas del personaje
- * 
+ * @brief Method to define the character's race
+ *
  * @param razas
  * @param opcion
  * @return
@@ -375,8 +379,8 @@ void Personaje::definirRaza(Raza *razas, int opcion)
 }
 
 /**
- * Mostrar las estadisticas del personaje
- * 
+ * @brief Method to show the character's class
+ *
  * @param
  * @return
  */
@@ -387,9 +391,9 @@ void Personaje::mostrarEstadisticas()
 }
 
 /**
- * Mostrar las estadisticas del personaje
- * 
- * @param raza
+ * @brief Method to show the character's statistics
+ *
+ * @param
  * @return
  */
 
@@ -399,8 +403,8 @@ void Personaje::definirEstadisticas(Raza raza)
 }
 
 /**
- * Mostrar las estadisticas del personaje
- * 
+ * @brief Method to show the character's class
+ *
  * @param
  * @return
  */
@@ -411,8 +415,8 @@ void Personaje::mostrarClase()
 }
 
 /**
- * Mostrar las estadisticas del personaje
- * 
+ * @brief Method to define the character's class
+ *
  * @param clases
  * @param opcion
  * @return
@@ -425,4 +429,4 @@ void Personaje::definirClase(Clase *clases, int opcion)
     armadura = clase.getArmaduraInicial();
 }
 
-#endif // Fin del preprocesador PERSONAJE_H
+#endif // End of PERSONAJE_H preprocessor

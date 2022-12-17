@@ -6,19 +6,20 @@
  */
 
 /**
- * Clase Objeto: Clase que representa a los objetos del juego.
+ * @brief This file contains the class that represents the different objects that a character can have.
+ *
  */
 
-#ifndef OBJETO_H // Si no esta definido el preprocesador OBJETO_H
-#define OBJETO_H // Definir el preprocesador OBJETO_H
+#ifndef OBJETO_H // If the preprocessor OBJETO_H is not defined
+#define OBJETO_H // Define the preprocessor OBJETO_H
 
-#include <iostream> // Libreria para entrada y salida de datos
-#include <string> // Libreria para manejo de strings
+#include <iostream> // Library for input and output
+#include <string>   // Library for strings
 
 class Objeto
 {
 protected:
-    // Atributos
+    // Attributes
     std::string nombre;
     std::string descripcion;
     int peso;
@@ -28,10 +29,10 @@ protected:
     std::string material;
 
 public:
-    // Constructores
+    // Constructors
     Objeto();
-    Objeto(std::string nombre, std::string descripcion, int peso, int valor, 
-        std::string tipo, std::string subtipo, std::string material);
+    Objeto(std::string nombre, std::string descripcion, int peso, int valor,
+           std::string tipo, std::string subtipo, std::string material);
 
     // Getters
     std::string getNombre();
@@ -51,14 +52,14 @@ public:
     void setSubtipo(std::string subtipo);
     void setMaterial(std::string material);
 
-    // Metodos
+    // Methods
     void mostrarDatos();
 };
 
-// Constructores
+// Constructors
 
 /**
- * Constructor por default
+ * @brief Construct a default Objeto:: Objeto object
  *
  * @param
  * @return Objeto
@@ -76,7 +77,7 @@ Objeto::Objeto()
 }
 
 /**
- * Constructor con parametros
+ * @brief Construct a new Objeto:: Objeto object
  *
  * @param nombre
  * @param descripcion
@@ -88,8 +89,8 @@ Objeto::Objeto()
  * @return Objeto
  */
 
-Objeto::Objeto(std::string nombre, std::string descripcion, int peso, int valor, 
-    std::string tipo, std::string subtipo, std::string material)
+Objeto::Objeto(std::string nombre, std::string descripcion, int peso, int valor,
+               std::string tipo, std::string subtipo, std::string material)
 {
     this->nombre = nombre;
     this->descripcion = descripcion;
@@ -103,7 +104,7 @@ Objeto::Objeto(std::string nombre, std::string descripcion, int peso, int valor,
 // Getters
 
 /**
- * Getter del atributo nombre
+ * @brief Getter for the attribute nombre
  *
  * @param
  * @return nombre
@@ -115,7 +116,7 @@ std::string Objeto::getNombre()
 }
 
 /**
- * Getter del atributo descripcion
+ * @brief Getter for the attribute descripcion
  *
  * @param
  * @return descripcion
@@ -127,7 +128,7 @@ std::string Objeto::getDescripcion()
 }
 
 /**
- * Getter del atributo peso
+ * @brief Getter for the attribute peso
  *
  * @param
  * @return peso
@@ -139,7 +140,7 @@ int Objeto::getPeso()
 }
 
 /**
- * Getter del atributo valor
+ * @brief Getter for the attribute valor
  *
  * @param
  * @return valor
@@ -151,7 +152,7 @@ int Objeto::getValor()
 }
 
 /**
- * Getter del atributo tipo
+ * @brief Getter for the attribute tipo
  *
  * @param
  * @return tipo
@@ -163,7 +164,7 @@ std::string Objeto::getTipo()
 }
 
 /**
- * Getter del atributo subtipo
+ * @brief Getter for the attribute subtipo
  *
  * @param
  * @return subtipo
@@ -175,7 +176,7 @@ std::string Objeto::getSubtipo()
 }
 
 /**
- * Getter del atributo material
+ * @brief Getter for the attribute material
  *
  * @param
  * @return material
@@ -189,7 +190,7 @@ std::string Objeto::getMaterial()
 // Setters
 
 /**
- * Setter del atributo nombre
+ * @brief Setter for the attribute nombre
  *
  * @param nombre
  * @return
@@ -201,7 +202,7 @@ void Objeto::setNombre(std::string nombre)
 }
 
 /**
- * Setter del atributo descripcion
+ * @brief Setter for the attribute descripcion
  *
  * @param descripcion
  * @return
@@ -213,7 +214,7 @@ void Objeto::setDescripcion(std::string descripcion)
 }
 
 /**
- * Setter del atributo peso
+ * @brief Setter for the attribute peso
  *
  * @param peso
  * @return
@@ -225,7 +226,7 @@ void Objeto::setPeso(int peso)
 }
 
 /**
- * Setter del atributo valor
+ * @brief Setter for the attribute valor
  *
  * @param valor
  * @return
@@ -237,7 +238,7 @@ void Objeto::setValor(int valor)
 }
 
 /**
- * Setter del atributo tipo
+ * @brief Setter for the attribute tipo
  *
  * @param tipo
  * @return
@@ -249,7 +250,7 @@ void Objeto::setTipo(std::string tipo)
 }
 
 /**
- * Setter del atributo subtipo
+ * @brief Setter for the attribute subtipo
  *
  * @param subtipo
  * @return
@@ -261,7 +262,7 @@ void Objeto::setSubtipo(std::string subtipo)
 }
 
 /**
- * Setter del atributo material
+ * @brief Setter for the attribute material
  *
  * @param material
  * @return
@@ -272,10 +273,10 @@ void Objeto::setMaterial(std::string material)
     this->material = material;
 }
 
-// Metodos
+// Methods
 
 /**
- * Metodo que muestra los datos del objeto
+ * @brief Method to show the object's data
  *
  * @param
  * @return
@@ -292,4 +293,4 @@ void Objeto::mostrarDatos()
     std::cout << "Material: " << this->material << std::endl;
 }
 
-#endif // Cierre del preprocesador OBJETO_H
+#endif // End of OBJETO_H preprossesor

@@ -6,31 +6,32 @@
  */
 
 /**
- * En este archivo se encuentran funciones que se utilizan en el programa.
+ * @brief This file contains some functions used in the program.
+ *
  */
 
-#ifndef FUNCIONES_H // Si no esta definido el preprocesador FUNCIONES_H
-#define FUNCIONES_H // Definir el preprocesador FUNCIONES_H
+#ifndef FUNCIONES_H // If the preprocessor FUNCIONES_H is not defined
+#define FUNCIONES_H // Define the preprocessor FUNCIONES_H
 
-#include <iostream> // Libreria para entrada y salida de datos
-#include <string> // Libreria para manejo de strings
-#include <cstdlib> // Libreria para manejo de numeros aleatorios
+#include <iostream> // Library for input and output
+#include <string>   // Library for strings
+#include <cstdlib>  // Library for system functions
 
-#include "Inicializador.h" // Incluir el archivo Inicializador.h
-#include "Raza.h" // Incluir la clase Raza
-#include "Clase.h"  // Incluir la clase Clase
-#include "Estadisticas.h" // Incluir la clase Estadisticas
-#include "Personaje.h" // Incluir la clase Personaje
+#include "Inicializador.h" // Include the Initializer file
+#include "Raza.h"          // Include the race class
+#include "Clase.h"         // Include the class class
+#include "Estadisticas.h"  // Include the statistics class
+#include "Personaje.h"     // Include the character class
 
-// Funciones
+// Functions
 
-// Funciones generales
+// General functions
 
 /**
- * Funcion para limpiar la pantalla
- * 
- * @param 
- * @return 
+ * @brief Function to clear the screen on Windows
+ *
+ * @param
+ * @return
  */
 
 void limpiarPantalla()
@@ -39,10 +40,10 @@ void limpiarPantalla()
 }
 
 /**
- * Funcion para pausar el programa
- * 
- * @param 
- * @return 
+ * @brief Function to pause the program on Windows
+ *
+ * @param
+ * @return
  */
 
 void pausa()
@@ -51,10 +52,10 @@ void pausa()
 }
 
 /**
- * Funcion para limpiar la pantalla y pausar el programa
- * 
- * @param 
- * @return 
+ * @brief Function to generate a random number
+ *
+ * @param
+ * @return int
  */
 
 int tirarDado()
@@ -63,9 +64,9 @@ int tirarDado()
 }
 
 /**
- * Funcion para limpiar la pantalla y pausar el programa
- * 
- * @param
+ * @brief Function to create a character with the data entered by the user
+ *
+ * @param personaje
  * @return
  */
 
@@ -78,18 +79,17 @@ void crearPersonaje(Personaje &personaje)
 
     limpiarPantalla();
 
-    // Pedir datos al usuario
-
+    // Title
     std::cout << "Creacion de personaje" << std::endl;
     std::cout << std::endl;
 
-    // Nombre
+    // Ask for the name
     std::cout << "Nombre (Solo una palabra): ";
     std::cin >> nombre;
     std::cout << std::endl;
     personaje.setNombre(nombre);
 
-    // Genero
+    // Ask for the gender
     std::cout << "Genero: " << std::endl;
     mostrarGeneros(inicializarGeneros(), 3);
     std::cin >> opcion;
@@ -101,7 +101,7 @@ void crearPersonaje(Personaje &personaje)
     std::cout << std::endl;
     personaje.setGenero(inicializarGeneros()[opcion - 1]);
 
-    // Edad
+    // Ask for the age
     std::cout << "Edad: ";
     std::cin >> edad;
     while (edad < 0)
@@ -113,7 +113,7 @@ void crearPersonaje(Personaje &personaje)
     std::cout << std::endl;
     personaje.setEdad(edad);
 
-    // Alineamiento
+    // Ask for the alignment
     std::cout << "Alineamiento: " << std::endl;
     mostrarAlineamientos(inicializarAlineamientos(), 9);
     std::cin >> opcion;
@@ -139,7 +139,7 @@ void crearPersonaje(Personaje &personaje)
     std::cout << std::endl;
     personaje.definirRaza(inicializarRazas(), opcion - 1);
 
-    // Clase
+    // Ask for the class
     std::cout << "Clase: " << std::endl;
     mostrarClases(inicializarClases(), 9);
     std::cin >> opcion;
@@ -152,7 +152,7 @@ void crearPersonaje(Personaje &personaje)
     std::cout << std::endl;
     personaje.definirClase(inicializarClases(), opcion - 1);
 
-    // Estadisticas
+    // Generate the statistics
     std::cout << "Estadisticas: " << std::endl;
     std::cout << "Las estadisticas se generan aleatoriamente" << std::endl;
     personaje.definirEstadisticas(personaje.getRaza());
@@ -161,4 +161,4 @@ void crearPersonaje(Personaje &personaje)
     return;
 }
 
-#endif // Cerrar el preprocesador FUNCIONES_H
+#endif // End of the preprocessor FUNCIONES_H

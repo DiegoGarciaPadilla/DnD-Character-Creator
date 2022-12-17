@@ -6,30 +6,29 @@
  */
 
 /**
- * Clase Arma: Clase que representa a las armas del juego 
- * y hereda de la clase Objeto.
+ * @brief This class is the base class for all the weapons in the game.
  */
 
-#ifndef ARMA_H // Si no esta definido el preprocesador ARMA_H
-#define ARMA_H // Definir el preprocesador ARMA_H
+#ifndef ARMA_H // If the ARMA_H preprocessor is not defined
+#define ARMA_H // Define the ARMA_H preprocessor
 
-#include <iostream> // Libreria para entrada y salida de datos
-#include <string> // Libreria para manejo de strings
+#include <iostream> // Library for input and output
+#include <string>   // Library for strings
 
-#include "Objeto.h" // Incluir la clase Objeto
+#include "Objeto.h" // Include the object class
 
 class Arma : public Objeto
 {
 private:
-    // Atributos
+    // Attributes
     std::string tipo = "Arma";
     int daño;
 
 public:
-    // Constructores
+    // Constructors
     Arma();
     Arma(std::string nombre, std::string descripcion, int peso, int valor, std::string subtipo,
-        std::string material, int daño);
+         std::string material, int daño);
 
     // Getters
     std::string getTipo();
@@ -39,15 +38,17 @@ public:
     void setTipo(std::string tipo);
     void setDaño(int daño);
 
-    // Metodos
+    // Methods
     void mostrarDatos();
 };
 
+// Constructors
+
 /**
- * Constructor por default
+ * @brief Construct a default Arma:: Arma object
  *
  * @param
- * @return Objeto Arma
+ * @return Arma object
  */
 
 Arma::Arma()
@@ -62,7 +63,7 @@ Arma::Arma()
 }
 
 /**
- * Constructor con parametros
+ * @brief Construct a new Arma:: Arma object
  *
  * @param nombre
  * @param descripcion
@@ -71,11 +72,11 @@ Arma::Arma()
  * @param subtipo
  * @param material
  * @param daño
- * @return Objeto Arma
+ * @return Arma object
  */
 
-Arma::Arma(std::string nombre, std::string descripcion, int peso, int valor, std::string subtipo, 
-    std::string material, int daño)
+Arma::Arma(std::string nombre, std::string descripcion, int peso, int valor, std::string subtipo,
+           std::string material, int daño)
 {
     this->nombre = nombre;
     this->descripcion = descripcion;
@@ -89,7 +90,7 @@ Arma::Arma(std::string nombre, std::string descripcion, int peso, int valor, std
 // Getters
 
 /**
- * Getter del atributo daño
+ * @brief Getter for the attribute daño
  *
  * @param
  * @return daño
@@ -103,7 +104,7 @@ int Arma::getDaño()
 // Setters
 
 /**
- * Setter del atributo daño
+ * @brief Setter for the attribute daño
  *
  * @param daño
  * @return
@@ -114,10 +115,10 @@ void Arma::setDaño(int daño)
     this->daño = daño;
 }
 
-// Metodos
+// Methods
 
 /**
- * Metodo que muestra los datos de la arma
+ * @brief Method to show the object's data
  *
  * @param
  * @return
@@ -135,4 +136,4 @@ void Arma::mostrarDatos()
     std::cout << "Daño: " << daño << std::endl;
 }
 
-#endif // Cierre del preprocesador ARMA_H
+#endif // End of the ARMA_H preprocessor

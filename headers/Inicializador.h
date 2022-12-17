@@ -5,29 +5,34 @@
  * 02/12/2022
  */
 
-/* 
- * En este archivo se encuentran funciones que se utilizan para inicializar
- * los vectores de objetos.
+/**
+ * @brief This file contains some functions for the initialization of the program.
+ *
  */
 
-#ifndef INICIALIZADOR_H // Si no esta definido el preprocesador INICIALIZADOR_H
-#define INICIALIZADOR_H // Definir el preprocesador INICIALIZADOR_H
+#ifndef INICIALIZADOR_H // If the preprocessor INICIALIZADOR_H is not defined
+#define INICIALIZADOR_H // Define the preprocessor INICIALIZADOR_H
 
-#include <iostream> // Libreria para entrada y salida de datos
-#include <fstream> // Libreria para manejo de archivos
-#include <string> // Libreria para manejo de strings
-#include <sstream> // Libreria para manejo de strings
-#include <vector> // Libreria para manejo de vectores
+#include <iostream> // Library for input and output
+#include <fstream>  // Library for file input and output
+#include <string>   // Library for strings
+#include <sstream>  // Library for string streams
+#include <vector>   // Library for vectors
 
-#include "Arma.h" // Incluir la clase Arma
-#include "Armadura.h" // Incluir la clase Armadura
-#include "Raza.h" // Incluir la clase Raza
-#include "Clase.h" // Incluir la clase Clase
+#include "Arma.h"     // Include the weapon class
+#include "Armadura.h" // Include the armor class
+#include "Raza.h"     // Include the race class
+#include "Clase.h"    // Include the class class
 
-// Genero
+// Functions
+
+// Gender
 
 /**
- * Inicializar arreglo de generos
+ * @brief Function to initialize gender array
+ *
+ * @param
+ * @return generos
  */
 
 std::string *inicializarGeneros()
@@ -41,11 +46,10 @@ std::string *inicializarGeneros()
 }
 
 /**
- * Inicializar arreglo de generos
- * 
+ * @brief Function to show gender array
+ *
  * @param generos
  * @param numGeneros
- * @return 
  */
 
 void mostrarGeneros(std::string *generos, int numGeneros)
@@ -55,11 +59,12 @@ void mostrarGeneros(std::string *generos, int numGeneros)
         std::cout << i + 1 << ". " << generos[i] << std::endl;
     }
 }
-// Alineamientos
+
+// Alignment
 
 /**
- * Inicializar arreglo de alineamientos
- * 
+ * @brief Function to initialize alignment array
+ *
  * @param
  * @return alineamientos
  */
@@ -81,11 +86,10 @@ std::string *inicializarAlineamientos()
 }
 
 /**
- * Mostrar arreglo de alineamientos
- * 
+ * @brief Function to show alignment array
+ *
  * @param alineamientos
  * @param numAlineamientos
- * @return 
  */
 
 void mostrarAlineamientos(std::string *alineamientos, int numAlineamientos)
@@ -96,38 +100,40 @@ void mostrarAlineamientos(std::string *alineamientos, int numAlineamientos)
     }
 }
 
-// Arma
+// Weapons
 
 /**
- * Inicializar vector de armas
- * 
+ * @brief Function to initialize weapons array
+ *
  * @param
  * @return armas
  */
 
 Arma *inicializarArmas()
 {
-    // Abrir el archivo
+    // Open the file
     std::ifstream archivo("./data/armas.txt");
-    // Comprobar que el archivo se ha abierto correctamente
+    // Check if the file was opened correctly
     if (!archivo.is_open())
     {
+        // If the file was not opened correctly, show an error message
         std::cout << "Error al abrir el archivo" << std::endl;
         return nullptr;
     }
 
-    // Leer la primera linea para saber el numero de armas
+    // Read the first line to get the number of weapons
     std::string linea;
     std::getline(archivo, linea);
     int numArmas = std::stoi(linea);
 
-    // Crear el array de armas
+    // Create the array of weapons
     Arma *armas = new Arma[numArmas];
 
-    // Leer el resto de lineas
+    // Read the file line by line
     int i = 0;
     while (std::getline(archivo, linea))
     {
+        // Split the line by the pipe character
         std::stringstream ss(linea);
         std::string token;
         std::vector<std::string> tokens;
@@ -135,27 +141,26 @@ Arma *inicializarArmas()
         {
             tokens.push_back(token);
         }
-        // Crear el arma
+        // Create the weapon object
         Arma arma(tokens[0], tokens[1], std::stoi(tokens[2]), std::stoi(tokens[3]),
                   tokens[4], tokens[5], std::stoi(tokens[6]));
-        // Guardar el arma en el array
+        // Add the weapon to the array
         armas[i] = arma;
         i++;
     }
 
-    // Cerrar el archivo
+    // Close the file
     archivo.close();
 
-    // Devolver el array de armas
+    // Return the array of weapons
     return armas;
 }
 
 /**
- * Mostrar vector de armas
- * 
+ * @brief Function to show weapons array
+ *
  * @param armas
  * @param numArmas
- * @return 
  */
 
 void mostrarArmas(Arma *armas, int numArmas)
@@ -166,38 +171,40 @@ void mostrarArmas(Arma *armas, int numArmas)
     }
 }
 
-// Armadura
+// Armor
 
 /**
- * Inicializar vector de armaduras
- * 
+ * @brief Function to initialize armor array
+ *
  * @param
  * @return armaduras
  */
 
 Armadura *inicializarArmaduras()
 {
-    // Abrir el archivo
+    // Open the file
     std::ifstream archivo("./data/armaduras.txt");
-    // Comprobar que el archivo se ha abierto correctamente
+    // Check if the file was opened correctly
     if (!archivo.is_open())
     {
+        // If the file was not opened correctly, show an error message
         std::cout << "Error al abrir el archivo" << std::endl;
         return nullptr;
     }
 
-    // Leer la primera linea para saber el numero de armaduras
+    // Read the first line to get the number of armors
     std::string linea;
     std::getline(archivo, linea);
     int numArmaduras = std::stoi(linea);
 
-    // Crear el array de armaduras
+    // Create the array of armors
     Armadura *armaduras = new Armadura[numArmaduras];
 
-    // Leer el resto de lineas
+    // Read the file line by line
     int i = 0;
     while (std::getline(archivo, linea))
     {
+        // Split the line by the pipe character
         std::stringstream ss(linea);
         std::string token;
         std::vector<std::string> tokens;
@@ -205,27 +212,26 @@ Armadura *inicializarArmaduras()
         {
             tokens.push_back(token);
         }
-        // Crear la armadura
-        Armadura armadura(tokens[0], tokens[1], std::stoi(tokens[2]), std::stoi(tokens[3]), 
-            tokens[4], tokens[5], std::stoi(tokens[6]));
-        // Agregar la armadura al array
+        // Create the armor object
+        Armadura armadura(tokens[0], tokens[1], std::stoi(tokens[2]), std::stoi(tokens[3]),
+                          tokens[4], tokens[5], std::stoi(tokens[6]));
+        // Add the armor to the array
         armaduras[i] = armadura;
         i++;
     }
 
-    // Cerrar el archivo
+    // Close the file
     archivo.close();
 
-    // Devolver el array de armaduras
+    // Return the array of armors
     return armaduras;
 }
 
 /**
- * Mostrar vector de armaduras
- * 
+ * @brief Function to show armor array
+ *
  * @param armaduras
  * @param numArmaduras
- * @return 
  */
 
 void mostrarArmaduras(Armadura *armaduras, int numArmaduras)
@@ -236,10 +242,10 @@ void mostrarArmaduras(Armadura *armaduras, int numArmaduras)
     }
 }
 
-// Razas
+// Races
 
 /**
- * Inicializar vector de razas
+ * @brief Function to initialize races array
  * 
  * @param
  * @return razas
@@ -247,27 +253,29 @@ void mostrarArmaduras(Armadura *armaduras, int numArmaduras)
 
 Raza *inicializarRazas()
 {
-    // Abrir el archivo
+    // Open the file
     std::ifstream archivo("./data/razas.txt");
-    // Comprobar que el archivo se ha abierto correctamente
+    // Check if the file was opened correctly
     if (!archivo.is_open())
     {
+        // If the file was not opened correctly, show an error message
         std::cout << "Error al abrir el archivo" << std::endl;
         return nullptr;
     }
 
-    // Leer la primera linea para saber el numero de razas
+    // Read the first line to get the number of races 
     std::string linea;
     std::getline(archivo, linea);
     int numRazas = std::stoi(linea);
 
-    // Crear el array de razas
+    // Create the array of races
     Raza *razas = new Raza[numRazas];
 
-    // Leer el resto de lineas
+    // Read the file line by line
     int i = 0;
     while (std::getline(archivo, linea))
     {
+        // Split the line by the pipe character
         std::stringstream ss(linea);
         std::string token;
         std::vector<std::string> tokens;
@@ -275,27 +283,26 @@ Raza *inicializarRazas()
         {
             tokens.push_back(token);
         }
-        // Crear la raza
-        Raza raza(tokens[0], tokens[1], std::stoi(tokens[2]), std::stoi(tokens[3]), 
-            std::stoi(tokens[4]), std::stoi(tokens[5]), std::stoi(tokens[6]), std::stoi(tokens[7]));
-        // Añadir la raza al array
+        // Create the race object
+        Raza raza(tokens[0], tokens[1], std::stoi(tokens[2]), std::stoi(tokens[3]),
+                  std::stoi(tokens[4]), std::stoi(tokens[5]), std::stoi(tokens[6]), std::stoi(tokens[7]));
+        // Add the race to the array
         razas[i] = raza;
         i++;
     }
 
-    // Cerrar el archivo
+    // Close the file
     archivo.close();
 
-    // Devolver el array de razas
+    // Return the array of races
     return razas;
 }
 
 /**
- * Mostrar vector de razas
+ * @brief Function to show races array
  * 
  * @param razas
  * @param numRazas
- * @return 
  */
 
 void mostrarRazas(Raza *razas, int numRazas)
@@ -306,10 +313,10 @@ void mostrarRazas(Raza *razas, int numRazas)
     }
 }
 
-// Clases
+// Classes
 
 /**
- * Inicializar vector de clases
+ * @brief Function to initialize classes array
  * 
  * @param
  * @return clases
@@ -317,30 +324,34 @@ void mostrarRazas(Raza *razas, int numRazas)
 
 Clase *inicializarClases()
 {
+    // Create the array of weapons
     Arma *armas = inicializarArmas();
+    // Create the array of armors
     Armadura *armaduras = inicializarArmaduras();
 
-    // Abrir el archivo
+    // Open the file
     std::ifstream archivo("./data/clases.txt");
-    // Comprobar que el archivo se ha abierto correctamente
+    // Check if the file was opened correctly
     if (!archivo.is_open())
     {
+        // If the file was not opened correctly, show an error message
         std::cout << "Error al abrir el archivo" << std::endl;
         return nullptr;
     }
 
-    // Leer la primera linea para saber el numero de clases
+    // Read the first line to get the number of classes
     std::string linea;
     std::getline(archivo, linea);
     int numClases = std::stoi(linea);
 
-    // Crear el array de clases
+    // Create the array of classes
     Clase *clases = new Clase[numClases];
 
-    // Leer el resto de lineas
+    // Read the file line by line
     int i = 0;
     while (std::getline(archivo, linea))
     {
+        // Split the line by the pipe character
         std::stringstream ss(linea);
         std::string token;
         std::vector<std::string> tokens;
@@ -348,9 +359,9 @@ Clase *inicializarClases()
         {
             tokens.push_back(token);
         }
-        // Crear la clase
+        // Create the class object
         Clase clase(tokens[0], tokens[1], armas[i], armaduras[i]);
-        // Guardar la clase en el array
+        // Add the class to the array
         clases[i] = clase;
         i++;
     }
@@ -363,11 +374,10 @@ Clase *inicializarClases()
 }
 
 /**
- * Mostrar vector de clases
+ * @brief Function to show classes array
  * 
  * @param clases
  * @param numClases
- * @return 
  */
 
 void mostrarClases(Clase *clases, int numClases)
@@ -378,4 +388,4 @@ void mostrarClases(Clase *clases, int numClases)
     }
 }
 
-#endif // Fin del preprocesador INICIALIZAR_H
+#endif // End of the ENTRADAS_H preprocessor
