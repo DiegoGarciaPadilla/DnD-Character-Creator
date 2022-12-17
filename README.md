@@ -1,17 +1,15 @@
 # DnD Charachter creator 🧙‍♂️
 
-_Proyecto para el módulo de Pensamiento computacional orientado a objetos_
+## Project description
 
-## Descripción del proyecto
+The objective of this project is to assist DnD enthusiasts in creating their character for the game, helping them to design and define aspects of their character such as alignment, race, stats and class, as well as modifying the stats according to the race they choose and assigning them a weapon and initial armor depending on the class they have chosen.
 
-El objetivo de este proyecto es asistir a los entusiastas de DnD para crear su personaje para el juego, ayudándolos a diseñarlo y definir aspectos de él como su alineamiento, su raza, sus estadísticas y su clase, además de modificar las estadísticas de acuerdo a la raza que eliga y asignarle un arma y una armadura inicial dependiendo de la clase que haya escogido.
+Likewise, the project has an encyclopedia, in which users can consult the different types of races, classes, weapons and armor present in the game.
 
-Del mismo modo, el proyecto cuenta con una enciclopedia, en la cual los usuarios pueden consultar los diferentes tipos de razas, clases, armas y armaduras presentes en el juego.
+## Class diagram
 
-## Diagrama de clases
+![Class diagram](media/uml.png)
 
-![Diagrama de clases](media/uml.png)
+## Execution instructions
 
-## Intrucciones de ejecución
-
-Para ejecutar el programa, dado que C++ es un lenguaje que necesita ser compilado, es necesario tener instalado el compilador `gcc`. Para comprorbar si se tiene instalado, se puede ejecutar el siguiente comando en la terminal: `gcc --version`. Si no se tiene instalado, se puede instalar con el siguiente comando: `sudo apt install gcc`. Una vez instalado, se puede compilar el programa con el siguiente comando: `g++ -o main.exe main.cpp`. Finalmente, se puede ejecutar el programa con el siguiente comando: `./main.exe`.
+To run the program, since C++ is a language that needs to be compiled, it is necessary to have the `gcc` compiler installed. To check if you have it installed, you can execute the following command in the terminal: `gcc --version`. If it is not installed, it can be installed with the following command: `sudo apt install gcc`. Once installed, you can compile the program with the following command: `g++ -o main.exe main.cpp`. Finally, you can run the program with the following command: `./main.exe`.
